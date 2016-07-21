@@ -31,6 +31,18 @@
 		E57C84B01D19353A00311A06 /* RealmDog.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C84AF1D19353A00311A06 /* RealmDog.m */; };
 		E57C84B31D1938BE00311A06 /* RealmBook.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C84B21D1938BE00311A06 /* RealmBook.m */; };
 		E57C84B61D1A723900311A06 /* JSONCity.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C84B51D1A723900311A06 /* JSONCity.m */; };
+		E57E4FF01D40C5C600675B61 /* YBGBaseDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E4FEF1D40C5C600675B61 /* YBGBaseDataController.m */; };
+		E57E4FF31D40C5D900675B61 /* YBGBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E4FF21D40C5D900675B61 /* YBGBaseViewModel.m */; };
+		E57E4FF71D40CE9D00675B61 /* YBGBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E4FF61D40CE9D00675B61 /* YBGBaseModel.m */; };
+		E57E50001D40D13D00675B61 /* SDSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E4FFF1D40D13D00675B61 /* SDSubject.m */; };
+		E57E50071D40D18300675B61 /* SDBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50021D40D18300675B61 /* SDBannerView.m */; };
+		E57E50081D40D18300675B61 /* SDPersonalInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50041D40D18300675B61 /* SDPersonalInfoView.m */; };
+		E57E50091D40D18300675B61 /* SDSubjectsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50061D40D18300675B61 /* SDSubjectsView.m */; };
+		E57E500E1D40D1B500675B61 /* SDHomeSubjectsCollectionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E500B1D40D1B500675B61 /* SDHomeSubjectsCollectionCellViewModel.m */; };
+		E57E500F1D40D1B500675B61 /* SDHomeSubjectsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E500D1D40D1B500675B61 /* SDHomeSubjectsViewModel.m */; };
+		E57E50121D40D22300675B61 /* YBGHomeDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50111D40D22300675B61 /* YBGHomeDataController.m */; };
+		E57E50151D4117FB00675B61 /* YBGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50141D4117FB00675B61 /* YBGHomeViewController.m */; };
+		E57E50191D411FE000675B61 /* YBGHomeListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50181D411FE000675B61 /* YBGHomeListReformer.m */; };
 		E598AC6C1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E598AC6B1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m */; };
 		E598AC6F1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E598AC6E1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.m */; };
 		E598AC721CEEFBF200294141 /* NSArray+YRDNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E598AC711CEEFBF200294141 /* NSArray+YRDNetworkingMethods.m */; };
@@ -119,6 +131,30 @@
 		E57C84B21D1938BE00311A06 /* RealmBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmBook.m; sourceTree = "<group>"; };
 		E57C84B41D1A723900311A06 /* JSONCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONCity.h; sourceTree = "<group>"; };
 		E57C84B51D1A723900311A06 /* JSONCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONCity.m; sourceTree = "<group>"; };
+		E57E4FEE1D40C5C600675B61 /* YBGBaseDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGBaseDataController.h; sourceTree = "<group>"; };
+		E57E4FEF1D40C5C600675B61 /* YBGBaseDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGBaseDataController.m; sourceTree = "<group>"; };
+		E57E4FF11D40C5D900675B61 /* YBGBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGBaseViewModel.h; sourceTree = "<group>"; };
+		E57E4FF21D40C5D900675B61 /* YBGBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGBaseViewModel.m; sourceTree = "<group>"; };
+		E57E4FF51D40CE9D00675B61 /* YBGBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGBaseModel.h; sourceTree = "<group>"; };
+		E57E4FF61D40CE9D00675B61 /* YBGBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGBaseModel.m; sourceTree = "<group>"; };
+		E57E4FFE1D40D13D00675B61 /* SDSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSubject.h; sourceTree = "<group>"; };
+		E57E4FFF1D40D13D00675B61 /* SDSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSubject.m; sourceTree = "<group>"; };
+		E57E50011D40D18300675B61 /* SDBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBannerView.h; sourceTree = "<group>"; };
+		E57E50021D40D18300675B61 /* SDBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBannerView.m; sourceTree = "<group>"; };
+		E57E50031D40D18300675B61 /* SDPersonalInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPersonalInfoView.h; sourceTree = "<group>"; };
+		E57E50041D40D18300675B61 /* SDPersonalInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPersonalInfoView.m; sourceTree = "<group>"; };
+		E57E50051D40D18300675B61 /* SDSubjectsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSubjectsView.h; sourceTree = "<group>"; };
+		E57E50061D40D18300675B61 /* SDSubjectsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSubjectsView.m; sourceTree = "<group>"; };
+		E57E500A1D40D1B500675B61 /* SDHomeSubjectsCollectionCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHomeSubjectsCollectionCellViewModel.h; sourceTree = "<group>"; };
+		E57E500B1D40D1B500675B61 /* SDHomeSubjectsCollectionCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHomeSubjectsCollectionCellViewModel.m; sourceTree = "<group>"; };
+		E57E500C1D40D1B500675B61 /* SDHomeSubjectsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHomeSubjectsViewModel.h; sourceTree = "<group>"; };
+		E57E500D1D40D1B500675B61 /* SDHomeSubjectsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHomeSubjectsViewModel.m; sourceTree = "<group>"; };
+		E57E50101D40D22300675B61 /* YBGHomeDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGHomeDataController.h; sourceTree = "<group>"; };
+		E57E50111D40D22300675B61 /* YBGHomeDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGHomeDataController.m; sourceTree = "<group>"; };
+		E57E50131D4117FB00675B61 /* YBGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGHomeViewController.h; sourceTree = "<group>"; };
+		E57E50141D4117FB00675B61 /* YBGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGHomeViewController.m; sourceTree = "<group>"; };
+		E57E50171D411FE000675B61 /* YBGHomeListReformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGHomeListReformer.h; sourceTree = "<group>"; };
+		E57E50181D411FE000675B61 /* YBGHomeListReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGHomeListReformer.m; sourceTree = "<group>"; };
 		E598AC6A1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YRDNetworkingMethods.h"; sourceTree = "<group>"; };
 		E598AC6B1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YRDNetworkingMethods.m"; sourceTree = "<group>"; };
 		E598AC6D1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YRDNetworkingMethods.h"; sourceTree = "<group>"; };
@@ -286,6 +322,7 @@
 		E5340B361C96A72900205879 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				E57E4FF81D40D12300675B61 /* MVVMDemo */,
 				E59C31161D3F6F84006F4E63 /* Mediator */,
 				E57C84A81D1933E600311A06 /* RealmDemo */,
 				E598ACC11CF404F500294141 /* HTTPDemo */,
@@ -408,9 +445,120 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		E57E4FEB1D40C5AC00675B61 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				E57E4FF41D40CE8A00675B61 /* Model */,
+				E57E4FEC1D40C5AC00675B61 /* DataController */,
+				E57E4FED1D40C5AC00675B61 /* ViewModel */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		E57E4FEC1D40C5AC00675B61 /* DataController */ = {
+			isa = PBXGroup;
+			children = (
+				E57E4FEE1D40C5C600675B61 /* YBGBaseDataController.h */,
+				E57E4FEF1D40C5C600675B61 /* YBGBaseDataController.m */,
+			);
+			path = DataController;
+			sourceTree = "<group>";
+		};
+		E57E4FED1D40C5AC00675B61 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E57E4FF11D40C5D900675B61 /* YBGBaseViewModel.h */,
+				E57E4FF21D40C5D900675B61 /* YBGBaseViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E57E4FF41D40CE8A00675B61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E57E4FF51D40CE9D00675B61 /* YBGBaseModel.h */,
+				E57E4FF61D40CE9D00675B61 /* YBGBaseModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E57E4FF81D40D12300675B61 /* MVVMDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E57E50161D411FBD00675B61 /* DataReformer */,
+				E57E4FF91D40D12300675B61 /* DataController */,
+				E57E4FFA1D40D12300675B61 /* Model */,
+				E57E4FFB1D40D12300675B61 /* View */,
+				E57E4FFC1D40D12300675B61 /* ViewController */,
+				E57E4FFD1D40D12300675B61 /* ViewModel */,
+			);
+			path = MVVMDemo;
+			sourceTree = "<group>";
+		};
+		E57E4FF91D40D12300675B61 /* DataController */ = {
+			isa = PBXGroup;
+			children = (
+				E57E50101D40D22300675B61 /* YBGHomeDataController.h */,
+				E57E50111D40D22300675B61 /* YBGHomeDataController.m */,
+			);
+			path = DataController;
+			sourceTree = "<group>";
+		};
+		E57E4FFA1D40D12300675B61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E57E4FFE1D40D13D00675B61 /* SDSubject.h */,
+				E57E4FFF1D40D13D00675B61 /* SDSubject.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E57E4FFB1D40D12300675B61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E57E50011D40D18300675B61 /* SDBannerView.h */,
+				E57E50021D40D18300675B61 /* SDBannerView.m */,
+				E57E50031D40D18300675B61 /* SDPersonalInfoView.h */,
+				E57E50041D40D18300675B61 /* SDPersonalInfoView.m */,
+				E57E50051D40D18300675B61 /* SDSubjectsView.h */,
+				E57E50061D40D18300675B61 /* SDSubjectsView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E57E4FFC1D40D12300675B61 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E57E50131D4117FB00675B61 /* YBGHomeViewController.h */,
+				E57E50141D4117FB00675B61 /* YBGHomeViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E57E4FFD1D40D12300675B61 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E57E500A1D40D1B500675B61 /* SDHomeSubjectsCollectionCellViewModel.h */,
+				E57E500B1D40D1B500675B61 /* SDHomeSubjectsCollectionCellViewModel.m */,
+				E57E500C1D40D1B500675B61 /* SDHomeSubjectsViewModel.h */,
+				E57E500D1D40D1B500675B61 /* SDHomeSubjectsViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E57E50161D411FBD00675B61 /* DataReformer */ = {
+			isa = PBXGroup;
+			children = (
+				E57E50171D411FE000675B61 /* YBGHomeListReformer.h */,
+				E57E50181D411FE000675B61 /* YBGHomeListReformer.m */,
+			);
+			path = DataReformer;
+			sourceTree = "<group>";
+		};
 		E598AC621CEDB23300294141 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E57E4FEB1D40C5AC00675B61 /* MVVM */,
 				E59C31031D3F6C6C006F4E63 /* Mediator */,
 				E598AC631CEDB23300294141 /* HTTP */,
 			);
@@ -784,6 +932,7 @@
 		E5340B031C9661AD00205879 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YBG;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = yurongde;
 				TargetAttributes = {
@@ -879,9 +1028,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5340B3D1C96A72900205879 /* SecondViewController.m in Sources */,
+				E57E500F1D40D1B500675B61 /* SDHomeSubjectsViewModel.m in Sources */,
 				E598ACA01CF2B36700294141 /* YRDCache.m in Sources */,
 				E5DA70291D01594A008E9724 /* YRDServiceYiBaoGao.m in Sources */,
 				E59C31191D3F7030006F4E63 /* MediatorViewController.m in Sources */,
+				E57E50071D40D18300675B61 /* SDBannerView.m in Sources */,
 				E59C31151D3F6DAA006F4E63 /* YBGMediator+YBGMediatorModuleDefaultActions.m in Sources */,
 				E598AC721CEEFBF200294141 /* NSArray+YRDNetworkingMethods.m in Sources */,
 				E598AC8F1CF2A7DB00294141 /* YRDServiceFactory.m in Sources */,
@@ -889,8 +1040,10 @@
 				E59C310E1D3F6D20006F4E63 /* YBGMediatorErrorViewController.m in Sources */,
 				E5340B4E1C970F4B00205879 /* Request.m in Sources */,
 				E5340B441C96AB2200205879 /* YYModelTestViewController.m in Sources */,
+				E57E50091D40D18300675B61 /* SDSubjectsView.m in Sources */,
 				E5340B471C96B0B400205879 /* Dog.m in Sources */,
 				E59C311F1D3F71D0006F4E63 /* YBGTarget_A.m in Sources */,
+				E57E50151D4117FB00675B61 /* YBGHomeViewController.m in Sources */,
 				E57C205C1D067C680063ABDD /* YRDServiceChangable.m in Sources */,
 				E5DA70271D01594A008E9724 /* YRDLoggerConfiguration.m in Sources */,
 				E5340B341C969E9900205879 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
@@ -899,12 +1052,15 @@
 				E5340B4B1C970F1500205879 /* AFAppDotNetAPIClient.m in Sources */,
 				E598ACCA1CF405E100294141 /* WeatherApiManager.m in Sources */,
 				E559C5371D0022AD00E118E4 /* SchoolItem.m in Sources */,
+				E57E4FF71D40CE9D00675B61 /* YBGBaseModel.m in Sources */,
 				E598AC781CEF011700294141 /* NSMutableString+YRDNetworkingMethods.m in Sources */,
+				E57E50001D40D13D00675B61 /* SDSubject.m in Sources */,
 				E5DA70041D0157B4008E9724 /* YRDAPIBaseManager.m in Sources */,
 				E59C31121D3F6D63006F4E63 /* YBGTarget_Default.m in Sources */,
 				E57C84AD1D1933FF00311A06 /* RealmDemoViewController.m in Sources */,
 				E5DA70161D015836008E9724 /* YRDUDIDGenerator.m in Sources */,
 				E559C5331D00217600E118E4 /* SchoolListReformer.m in Sources */,
+				E57E50191D411FE000675B61 /* YBGHomeListReformer.m in Sources */,
 				E57C84B01D19353A00311A06 /* RealmDog.m in Sources */,
 				E598AC751CEEFF3000294141 /* NSString+YRDNetworkingMethods.m in Sources */,
 				E5DA70281D01594A008E9724 /* WeatherService.m in Sources */,
@@ -915,7 +1071,9 @@
 				E57C84B31D1938BE00311A06 /* RealmBook.m in Sources */,
 				E5DA70261D01594A008E9724 /* YRDAppContext.m in Sources */,
 				E598AC9D1CF2B17F00294141 /* YRDCachedObject.m in Sources */,
+				E57E500E1D40D1B500675B61 /* SDHomeSubjectsCollectionCellViewModel.m in Sources */,
 				E598AC6F1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.m in Sources */,
+				E57E4FF01D40C5C600675B61 /* YBGBaseDataController.m in Sources */,
 				E559C52C1D001B7B00E118E4 /* HTTPPostTableViewController.m in Sources */,
 				E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */,
 				E5340B131C9661AD00205879 /* AppDelegate.m in Sources */,
@@ -930,7 +1088,10 @@
 				E5340B3E1C96A72900205879 /* ViewController.m in Sources */,
 				E59C31091D3F6C84006F4E63 /* YBGMediator.m in Sources */,
 				E5DA702D1D017396008E9724 /* YRDLocationManager.m in Sources */,
+				E57E50121D40D22300675B61 /* YBGHomeDataController.m in Sources */,
 				E598AC7E1CEF084400294141 /* UIDevice+IdentifierAddition.m in Sources */,
+				E57E50081D40D18300675B61 /* SDPersonalInfoView.m in Sources */,
+				E57E4FF31D40C5D900675B61 /* YBGBaseViewModel.m in Sources */,
 				E5DA70151D015836008E9724 /* YRDSignatureGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

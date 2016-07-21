@@ -1,20 +1,20 @@
 //
-//  SchoolListReformer.m
+//  YBGHomeListReformer.m
 //  YRDGoodArc
 //
-//  Created by yurongde on 16/6/2.
+//  Created by yurongde on 16/7/21.
 //  Copyright © 2016年 yurongde. All rights reserved.
 //
 
-#import "SchoolListReformer.h"
+#import "YBGHomeListReformer.h"
+#import "SDSubject.h"
 #import "YiBaoGaoApiManager.h"
-#import "SchoolItem.h"
-@implementation SchoolListReformer
+@implementation YBGHomeListReformer
 - (id)manager:(YRDAPIBaseManager *)manager reformData:(NSDictionary *)data {
     if ([manager isKindOfClass:[YiBaoGaoApiManager class]]) {
         NSDictionary *dict = data[@"result"];
-        return [NSArray yy_modelArrayWithClass:[SchoolItem class] json:dict];
-
+        return [NSArray yy_modelArrayWithClass:[SDSubject class] json:dict];
+        
     }
     return nil;
 }

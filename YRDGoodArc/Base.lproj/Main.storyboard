@@ -93,6 +93,13 @@
                                     <segue destination="xuz-67-Mcp" kind="show" id="JXx-dH-2Mw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNV-FE-BSP">
+                                <rect key="frame" x="79" y="481" width="46" height="30"/>
+                                <state key="normal" title="MVVM"/>
+                                <connections>
+                                    <segue destination="bgJ-5c-gmN" kind="show" id="exT-GH-A6e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -215,6 +222,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbu-r3-jkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2584" y="354"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="PnL-3X-XEf">
+            <objects>
+                <viewController id="bgJ-5c-gmN" customClass="YBGHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D7O-Hs-Prh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Siv-Ym-gG6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CCh-NO-8BR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ox-Kl-s9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3431" y="314"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="Lto-YM-vn0">

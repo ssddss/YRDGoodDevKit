@@ -34,6 +34,7 @@ static NSString *const kCellID = @"cell";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
    NSInteger requestID = [self.apiManager loadData];
+   
     @weakify(self)
     [self.apiManager1 startWithCompletionBlockWithSuccess:^(YRDAPIBaseManager *manager) {
         @strongify(self)
