@@ -46,7 +46,22 @@ static NSString *const kCellID = @"cell";
     } failure:^(YRDAPIBaseManager *manager) {
         
     }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        @strongify(self)
 
+        [self.apiManager1 startWithCompletionBlockWithSuccess:^(YRDAPIBaseManager *manager) {
+            NSLog(@"blockChange1");
+            NSArray *arr = [manager fetchDataWithReformer:self.reformer];
+            [self.dataSource addObjectsFromArray:arr];
+            
+            [self.tableView reloadData];
+            
+        } failure:^(YRDAPIBaseManager *manager) {
+            
+        }];
+
+    });
+    
 
 }
 

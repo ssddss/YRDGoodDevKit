@@ -156,7 +156,12 @@ typedef NS_ENUM (NSUInteger, YRDAPIManagerRequestType){
 - (void)cleanData;
 - (NSDictionary *)reformParams:(NSDictionary *)params;
 - (BOOL)shouldCache;
-
+/**
+ *  检查同一请求是否已经发起，如果发起取消之前的请求，默认取消当前请求
+ *  注意： 如果用delegate的方式请求就不做处理，不会影响block
+ *  @return   YES表示刷新请求，NO表示保留之前的请求，当前请求不发起
+ */
+- (BOOL)shouldRefreshLoadingRequest;
 @end
 
 /*************************************************************************************************/
@@ -221,7 +226,7 @@ typedef void(^YRDRequestCompletionBlock)(YRDAPIBaseManager *manager);
 - (NSInteger)loadData;
 
 
-/// block启动请求
+/// block启动请求,两者最好是一次用一种方式就好
 /*
  记得使用weakSelf,不然如果网络超时的时候会延长生命周期。
 @weakify(self)
@@ -231,7 +236,7 @@ typedef void(^YRDRequestCompletionBlock)(YRDAPIBaseManager *manager);
     ...
 }];
 */
-- (void)startWithCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success
+- (NSInteger)startWithCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success
                                     failure:(YRDRequestCompletionBlock)failure;
 //设置block
 - (void)setCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success

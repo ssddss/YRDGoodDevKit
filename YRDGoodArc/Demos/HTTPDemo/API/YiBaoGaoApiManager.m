@@ -41,11 +41,11 @@
 }
 #pragma mark - YRDApiValidator
 - (BOOL)manager:(YRDAPIBaseManager *)manager isCorrectWithParamsData:(NSDictionary *)data {
-    if (manager.isLoading) {
-        //可以有效地防止连续请求
-        NSLog(@"前一个请求还未发送完");
-        return NO;
-    }
+//    if (manager.isLoading) {
+//        //可以有效地防止连续请求
+//        NSLog(@"前一个请求还未发送完");
+//        return NO;
+//    }
     return YES;
 }
 - (BOOL)manager:(YRDAPIBaseManager *)manager isCorrectWithCallBackData:(NSDictionary *)data {
@@ -61,5 +61,8 @@
 }
 - (YRDAPIManagerRequestType)requestType {
     return YRDAPIManagerRequestTypePost;
+}
+- (BOOL)shouldRefreshLoadingRequest {
+    return NO;
 }
 @end

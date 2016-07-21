@@ -94,10 +94,32 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
 }
 #pragma mark - calling API
 
-- (void)startWithCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success failure:(YRDRequestCompletionBlock)failure {
+- (NSInteger)startWithCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success failure:(YRDRequestCompletionBlock)failure {
    
+    if ([self.child respondsToSelector:@selector(shouldRefreshLoadingRequest)]) {
+        if ([self.child shouldRefreshLoadingRequest]) {
+            if (self.isLoading) {
+//                如果正在请求取消之前的请求，重新请求
+                [self cancelAllRequests];
+            }
+        }
+        else {
+            if (self.isLoading) {
+                //  如果正在请求取消当前请求
+                return 0;
+            }
+        }
+    }
+    else {
+        if (self.isLoading) {
+            //  如果正在请求取消当前请求
+            return 0;
+        }
+    }
+   
+    
     [self setCompletionBlockWithSuccess:success failure:failure];
-    [self loadData];
+    return [self loadData];
 }
 - (void)setCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success
                               failure:(YRDRequestCompletionBlock)failure {
@@ -113,6 +135,8 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
     self.failureCompletionBlock = nil;
 }
 - (NSInteger)loadData {
+    
+
     NSDictionary *params = [self.paramSource paramsForApi:self];
     NSInteger requestId = [self loadDataWithParams:params];
     return requestId;
