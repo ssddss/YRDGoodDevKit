@@ -11,6 +11,8 @@
 #import "YBGHomeDataController.h"
 #import "SDHomeSubjectsViewModel.h"
 #import "Masonry.h"
+#import "MBProgressHUD.h"
+#import "SDHomeSubjectsCollectionCellViewModel.h"
 @interface YBGHomeViewController ()<SDHomeSubjectsViewDelegate>
 @property (nonatomic, strong, nullable) UIScrollView *scrollView;/**<  容器*/
 @property (nonatomic, strong, nullable) UIView *contentView;/**< 内容*/
@@ -42,6 +44,10 @@
 - (void)homeSubjectsView:(SDSubjectsView *)subjectView didPressItemAtIndex:(NSInteger)index {
     NSLog(@"%ld",(long)index);
     NSLog(@"%@",subjectView.viewModel.cellViewModels[index]);
+    SDSubject *subject = self.dataController.subjects[index];
+    subject.xxmc = @"change";
+  
+    [self renderSubjectView];
 }
 #pragma mark - Notifications
 
@@ -76,9 +82,11 @@
     }];
 }
 - (void)fetchSubjectData {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak  typeof(self) weakSelf = self;
     [self.dataController requestSubjectDatcWithCallBack:^(NSError * _Nullable error) {
         __strong typeof(self) strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
         if (!error) {
             [strongSelf renderSubjectView];
         }

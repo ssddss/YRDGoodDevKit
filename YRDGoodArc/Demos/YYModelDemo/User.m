@@ -47,22 +47,22 @@
 }
 // 直接添加以下代码即可自动完成
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [self yy_modelEncodeWithCoder:aCoder];
+    [self modelEncodeWithCoder:aCoder];
 }
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
-    return [self yy_modelInitWithCoder:aDecoder];
+    return [self modelInitWithCoder:aDecoder];
 }
 - (id)copyWithZone:(NSZone *)zone {
-    return [self yy_modelCopy];
+    return [self modelCopy];
 }
 - (NSUInteger)hash {
-    return [self yy_modelHash];
+    return [self modelHash];
 }
 - (BOOL)isEqual:(id)object{
-    return [self yy_modelIsEqual:object];
+    return [self modelIsEqual:object];
 }
 - (NSString *)description {
-    return [self yy_modelDescription];
+    return [self modelDescription];
 }
 @end

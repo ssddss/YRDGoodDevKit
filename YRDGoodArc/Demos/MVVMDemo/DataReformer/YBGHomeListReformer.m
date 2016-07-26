@@ -13,7 +13,7 @@
 - (id)manager:(YRDAPIBaseManager *)manager reformData:(NSDictionary *)data {
     if ([manager isKindOfClass:[YiBaoGaoApiManager class]]) {
         NSDictionary *dict = data[@"result"];
-        return [NSArray yy_modelArrayWithClass:[SDSubject class] json:dict];
+        return [NSArray modelArrayWithClass:[SDSubject class] json:dict];
         
     }
     return nil;

@@ -21,7 +21,7 @@
     
     NSDictionary *originalData = @{@"name1":@"小明",@"age1":@"22",@"info1":@{@"cup":@"B"},@"dog":@{@"dogName":@"Amy",@"dogAge":@1}};
     
-    User *user = [User yy_modelWithDictionary:originalData];
+    User *user = [User modelWithDictionary:originalData];
     
     NSLog(@"%@",user);
     
@@ -31,7 +31,7 @@
         NSLog(@"相等");
     }
     
-    NSDictionary *transformData = [user yy_modelToJSONObject];
+    NSDictionary *transformData = [user modelToJSONObject];
     
     NSLog(@"%@",transformData);
     

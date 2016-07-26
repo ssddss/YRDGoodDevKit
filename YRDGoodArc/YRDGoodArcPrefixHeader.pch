@@ -14,10 +14,7 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
 //YY的组件
-#import <YYText/YYText.h>
-#import <YYAsyncLayer/YYAsyncLayer.h>
-#import <YYModel/YYModel.h>
-#import <YYCategories/YYCategories.h>
+#import <YYKit/YYKit.h>
 
 //通用的类
 #import "YRDGeneral.h"
