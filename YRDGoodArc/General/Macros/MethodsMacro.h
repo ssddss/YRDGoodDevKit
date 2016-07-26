@@ -19,6 +19,17 @@
 
 #define USER_DEFAULTS_GET(__KEY) ([[NSUserDefaults standardUserDefaults] objectForKey:__KEY])
 
+#pragma mark - 调试输出
 
+// DLog displays output if DEBUG
+#ifndef RELEASE
+#ifndef DLog
+#   define DLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
+#endif
+#else
+#ifndef DLog
+#   define DLog(...)
+#endif
+#endif
 
 #endif /* MethodsMacro_h */

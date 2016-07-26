@@ -43,6 +43,7 @@
 		E57E50121D40D22300675B61 /* YBGHomeDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50111D40D22300675B61 /* YBGHomeDataController.m */; };
 		E57E50151D4117FB00675B61 /* YBGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50141D4117FB00675B61 /* YBGHomeViewController.m */; };
 		E57E50191D411FE000675B61 /* YBGHomeListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50181D411FE000675B61 /* YBGHomeListReformer.m */; };
+		E58D74691D46FFD6002D1120 /* YBGTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E58D74681D46FFD6002D1120 /* YBGTimeUtil.m */; };
 		E598AC6C1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E598AC6B1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m */; };
 		E598AC6F1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E598AC6E1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.m */; };
 		E598AC721CEEFBF200294141 /* NSArray+YRDNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E598AC711CEEFBF200294141 /* NSArray+YRDNetworkingMethods.m */; };
@@ -155,6 +156,8 @@
 		E57E50141D4117FB00675B61 /* YBGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGHomeViewController.m; sourceTree = "<group>"; };
 		E57E50171D411FE000675B61 /* YBGHomeListReformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGHomeListReformer.h; sourceTree = "<group>"; };
 		E57E50181D411FE000675B61 /* YBGHomeListReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGHomeListReformer.m; sourceTree = "<group>"; };
+		E58D74671D46FFD6002D1120 /* YBGTimeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGTimeUtil.h; sourceTree = "<group>"; };
+		E58D74681D46FFD6002D1120 /* YBGTimeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGTimeUtil.m; sourceTree = "<group>"; };
 		E598AC6A1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YRDNetworkingMethods.h"; sourceTree = "<group>"; };
 		E598AC6B1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YRDNetworkingMethods.m"; sourceTree = "<group>"; };
 		E598AC6D1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YRDNetworkingMethods.h"; sourceTree = "<group>"; };
@@ -555,9 +558,19 @@
 			path = DataReformer;
 			sourceTree = "<group>";
 		};
+		E58D74661D46FCC0002D1120 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E58D74671D46FFD6002D1120 /* YBGTimeUtil.h */,
+				E58D74681D46FFD6002D1120 /* YBGTimeUtil.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		E598AC621CEDB23300294141 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E58D74661D46FCC0002D1120 /* Tools */,
 				E57E4FEB1D40C5AC00675B61 /* MVVM */,
 				E59C31031D3F6C6C006F4E63 /* Mediator */,
 				E598AC631CEDB23300294141 /* HTTP */,
@@ -1093,6 +1106,7 @@
 				E57E50081D40D18300675B61 /* SDPersonalInfoView.m in Sources */,
 				E57E4FF31D40C5D900675B61 /* YBGBaseViewModel.m in Sources */,
 				E5DA70151D015836008E9724 /* YRDSignatureGenerator.m in Sources */,
+				E58D74691D46FFD6002D1120 /* YBGTimeUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
