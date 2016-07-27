@@ -118,4 +118,20 @@
  *  @return
  */
 - (NSDate *)dateByComparingWithDate:(NSDate *)aDate totalMinutes:(NSInteger)minutes;
+/**
+ *  根据时间获取当前日期整周的数据，周日为第一天
+ *
+ *  @param date
+ *
+ *  @return
+ */
+- (NSArray *)getDateInWeek:(NSDate *)date;
+/**
+ *  检测日期是否在当前周里，周日为第一天
+ *
+ *  @param date
+ *
+ *  @return
+ */
+- (BOOL)checkDateInCurrentWeek:(NSString *)date;
 @end

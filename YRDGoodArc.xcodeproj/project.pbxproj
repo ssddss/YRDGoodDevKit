@@ -44,6 +44,7 @@
 		E57E50151D4117FB00675B61 /* YBGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50141D4117FB00675B61 /* YBGHomeViewController.m */; };
 		E57E50191D411FE000675B61 /* YBGHomeListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E57E50181D411FE000675B61 /* YBGHomeListReformer.m */; };
 		E58D74691D46FFD6002D1120 /* YBGTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E58D74681D46FFD6002D1120 /* YBGTimeUtil.m */; };
+		E58D746F1D4737F8002D1120 /* YBGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58D746E1D4737F8002D1120 /* YBGBaseViewController.m */; };
 		E598AC6C1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E598AC6B1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m */; };
 		E598AC6F1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E598AC6E1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.m */; };
 		E598AC721CEEFBF200294141 /* NSArray+YRDNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E598AC711CEEFBF200294141 /* NSArray+YRDNetworkingMethods.m */; };
@@ -158,6 +159,8 @@
 		E57E50181D411FE000675B61 /* YBGHomeListReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGHomeListReformer.m; sourceTree = "<group>"; };
 		E58D74671D46FFD6002D1120 /* YBGTimeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGTimeUtil.h; sourceTree = "<group>"; };
 		E58D74681D46FFD6002D1120 /* YBGTimeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGTimeUtil.m; sourceTree = "<group>"; };
+		E58D746D1D4737F8002D1120 /* YBGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGBaseViewController.h; sourceTree = "<group>"; };
+		E58D746E1D4737F8002D1120 /* YBGBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGBaseViewController.m; sourceTree = "<group>"; };
 		E598AC6A1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YRDNetworkingMethods.h"; sourceTree = "<group>"; };
 		E598AC6B1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YRDNetworkingMethods.m"; sourceTree = "<group>"; };
 		E598AC6D1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YRDNetworkingMethods.h"; sourceTree = "<group>"; };
@@ -567,9 +570,35 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		E58D746A1D4737DA002D1120 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				E58D746B1D4737DA002D1120 /* BaseControllers */,
+				E58D746C1D4737DA002D1120 /* BaseUIViews */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		E58D746B1D4737DA002D1120 /* BaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E58D746D1D4737F8002D1120 /* YBGBaseViewController.h */,
+				E58D746E1D4737F8002D1120 /* YBGBaseViewController.m */,
+			);
+			path = BaseControllers;
+			sourceTree = "<group>";
+		};
+		E58D746C1D4737DA002D1120 /* BaseUIViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseUIViews;
+			sourceTree = "<group>";
+		};
 		E598AC621CEDB23300294141 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E58D746A1D4737DA002D1120 /* UILayer */,
 				E58D74661D46FCC0002D1120 /* Tools */,
 				E57E4FEB1D40C5AC00675B61 /* MVVM */,
 				E59C31031D3F6C6C006F4E63 /* Mediator */,
@@ -1090,6 +1119,7 @@
 				E559C52C1D001B7B00E118E4 /* HTTPPostTableViewController.m in Sources */,
 				E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */,
 				E5340B131C9661AD00205879 /* AppDelegate.m in Sources */,
+				E58D746F1D4737F8002D1120 /* YBGBaseViewController.m in Sources */,
 				E59C31251D3F7222006F4E63 /* YBGMediator+YBGMediatorModuleAActions.m in Sources */,
 				E5340B101C9661AD00205879 /* main.m in Sources */,
 				E59C31221D3F71EF006F4E63 /* DemoModuleADetailViewController.m in Sources */,

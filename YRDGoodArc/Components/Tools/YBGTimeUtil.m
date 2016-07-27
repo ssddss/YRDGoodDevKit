@@ -561,7 +561,30 @@
     
     return nil;
 }
-
+-(NSArray *)getDateInWeek:(NSDate *)date{
+    NSMutableArray *dates = [NSMutableArray array];
+    NSInteger index = [self weekdayIndexByDate:date];
+    NSDate *sunDayDate = [self dateByComparingWithDate:date totalDays:0-index];
+    NSString *dateStr = [self dateStringByDate:sunDayDate];
+    for (NSInteger i = 0; i< 7; i++) {
+        NSDate *date2 = [self dateByComparingWithDate:[self dateByDateString:dateStr] totalDays:i];
+        NSString *date2Str = [self dateStringByDate:date2];
+        [dates addObject:date2Str];
+    }
+    
+    return dates;
+}
+- (BOOL)checkDateInCurrentWeek:(NSString *)date {
+    NSArray *dates = [self getDateInWeek:[NSDate date]];
+    if (date.length > 9) {
+        NSString *targetDate = [date substringToIndex:10];
+        if ([dates containsObject:targetDate]) {
+            return YES;
+        }
+        return NO;
+    }
+    return NO;
+}
 - (NSDateFormatter *)formatter {
     if (!_formatter) {
         _formatter = [[NSDateFormatter alloc]init];
