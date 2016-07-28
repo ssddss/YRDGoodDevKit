@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @interface YBGBaseViewController : UIViewController
+
+@property (nonatomic, readonly) NSString *pageId;
 /**
  *  显示本Controller显示位置的加载动画
  */

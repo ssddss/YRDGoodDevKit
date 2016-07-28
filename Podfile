@@ -14,6 +14,8 @@ pod 'JPFPSStatus'
 pod 'YYKit'
 pod 'Realm'
 pod 'HandyFrame'
+pod 'Aspects'
+
 end
 
 

@@ -27,6 +27,8 @@
 		E5340B4B1C970F1500205879 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B4A1C970F1500205879 /* AFAppDotNetAPIClient.m */; };
 		E5340B4E1C970F4B00205879 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B4D1C970F4B00205879 /* Request.m */; };
 		E5340B511C97103300205879 /* AFNDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B501C97103300205879 /* AFNDemoViewController.m */; };
+		E5435DA21D49DB140021493F /* YBGViewControllerIntercepter.m in Sources */ = {isa = PBXBuildFile; fileRef = E5435DA11D49DB140021493F /* YBGViewControllerIntercepter.m */; };
+		E5435DA91D49DE820021493F /* YBGAOPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5435DA81D49DE820021493F /* YBGAOPViewController.m */; };
 		E559C52C1D001B7B00E118E4 /* HTTPPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C52B1D001B7B00E118E4 /* HTTPPostTableViewController.m */; };
 		E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C52E1D001C6E00E118E4 /* YiBaoGaoApiManager.m */; };
 		E559C5331D00217600E118E4 /* SchoolListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C5321D00217600E118E4 /* SchoolListReformer.m */; };
@@ -127,6 +129,10 @@
 		E5340B4D1C970F4B00205879 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		E5340B4F1C97103300205879 /* AFNDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNDemoViewController.h; sourceTree = "<group>"; };
 		E5340B501C97103300205879 /* AFNDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNDemoViewController.m; sourceTree = "<group>"; };
+		E5435DA01D49DB140021493F /* YBGViewControllerIntercepter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGViewControllerIntercepter.h; sourceTree = "<group>"; };
+		E5435DA11D49DB140021493F /* YBGViewControllerIntercepter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGViewControllerIntercepter.m; sourceTree = "<group>"; };
+		E5435DA71D49DE820021493F /* YBGAOPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGAOPViewController.h; sourceTree = "<group>"; };
+		E5435DA81D49DE820021493F /* YBGAOPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGAOPViewController.m; sourceTree = "<group>"; };
 		E559C52A1D001B7B00E118E4 /* HTTPPostTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPPostTableViewController.h; sourceTree = "<group>"; };
 		E559C52B1D001B7B00E118E4 /* HTTPPostTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPPostTableViewController.m; sourceTree = "<group>"; };
 		E559C52D1D001C6E00E118E4 /* YiBaoGaoApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiBaoGaoApiManager.h; sourceTree = "<group>"; };
@@ -365,6 +371,7 @@
 		E5340B361C96A72900205879 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				E5435DA61D49DE820021493F /* AOPDemo */,
 				E513E6C01D49B619000B0809 /* FDTemplateCellDemo */,
 				E513E6BC1D4992E4000B0809 /* InheritBaseController */,
 				E57E4FF81D40D12300675B61 /* MVVMDemo */,
@@ -413,6 +420,32 @@
 				E5340B501C97103300205879 /* AFNDemoViewController.m */,
 			);
 			path = AFNetworkingDemo;
+			sourceTree = "<group>";
+		};
+		E5435D9E1D49DAFD0021493F /* AOP */ = {
+			isa = PBXGroup;
+			children = (
+				E5435D9F1D49DAFD0021493F /* Interceptor */,
+			);
+			path = AOP;
+			sourceTree = "<group>";
+		};
+		E5435D9F1D49DAFD0021493F /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				E5435DA01D49DB140021493F /* YBGViewControllerIntercepter.h */,
+				E5435DA11D49DB140021493F /* YBGViewControllerIntercepter.m */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		E5435DA61D49DE820021493F /* AOPDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E5435DA71D49DE820021493F /* YBGAOPViewController.h */,
+				E5435DA81D49DE820021493F /* YBGAOPViewController.m */,
+			);
+			path = AOPDemo;
 			sourceTree = "<group>";
 		};
 		E559C5301D00215900E118E4 /* DataReformer */ = {
@@ -637,6 +670,7 @@
 		E598AC621CEDB23300294141 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E5435D9E1D49DAFD0021493F /* AOP */,
 				E58D746A1D4737DA002D1120 /* UILayer */,
 				E58D74661D46FCC0002D1120 /* Tools */,
 				E57E4FEB1D40C5AC00675B61 /* MVVM */,
@@ -1175,11 +1209,13 @@
 				E5340B3E1C96A72900205879 /* ViewController.m in Sources */,
 				E59C31091D3F6C84006F4E63 /* YBGMediator.m in Sources */,
 				E5DA702D1D017396008E9724 /* YRDLocationManager.m in Sources */,
+				E5435DA91D49DE820021493F /* YBGAOPViewController.m in Sources */,
 				E57E50121D40D22300675B61 /* YBGHomeDataController.m in Sources */,
 				E598AC7E1CEF084400294141 /* UIDevice+IdentifierAddition.m in Sources */,
 				E57E50081D40D18300675B61 /* SDPersonalInfoView.m in Sources */,
 				E57E4FF31D40C5D900675B61 /* YBGBaseViewModel.m in Sources */,
 				E5DA70151D015836008E9724 /* YRDSignatureGenerator.m in Sources */,
+				E5435DA21D49DB140021493F /* YBGViewControllerIntercepter.m in Sources */,
 				E58D74691D46FFD6002D1120 /* YBGTimeUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

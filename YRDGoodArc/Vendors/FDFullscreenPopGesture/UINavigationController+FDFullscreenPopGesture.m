@@ -77,36 +77,43 @@ typedef void (^_FDViewControllerWillAppearInjectBlock)(UIViewController *viewCon
 
 @implementation UIViewController (FDFullscreenPopGesturePrivate)
 
-+ (void)load
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        
-        SEL originalSelector = @selector(viewWillAppear:);
-        SEL swizzledSelector = @selector(fd_viewWillAppear:);
-        
-        Method originalMethod = class_getInstanceMethod(class, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        
-        BOOL success = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-        if (success) {
-            class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-        } else {
-            method_exchangeImplementations(originalMethod, swizzledMethod);
-        }
-    });
-}
+//        这个会替换掉系统的viewwillappear方法，使用Interceptor来调用self.fd_willAppearInjectBlock
 
-- (void)fd_viewWillAppear:(BOOL)animated
-{
-    // Forward to primary implementation.
-    [self fd_viewWillAppear:animated];
-    
-    if (self.fd_willAppearInjectBlock) {
-        self.fd_willAppearInjectBlock(self, animated);
-    }
-}
+//+ (void)load
+//{
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        
+//        
+//        Class class = [self class];
+//        
+//        SEL originalSelector = @selector(viewWillAppear:);
+//        SEL swizzledSelector = @selector(fd_viewWillAppear:);
+//        
+//        Method originalMethod = class_getInstanceMethod(class, originalSelector);
+//        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+//        
+//        BOOL success = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+//        if (success) {
+//            class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+//        } else {
+//            method_exchangeImplementations(originalMethod, swizzledMethod);
+//        }
+//        
+//
+//
+//    });
+//}
+
+//- (void)fd_viewWillAppear:(BOOL)animated
+//{
+//    // Forward to primary implementation.
+//    [self fd_viewWillAppear:animated];
+//    
+//    if (self.fd_willAppearInjectBlock) {
+//        self.fd_willAppearInjectBlock(self, animated);
+//    }
+//}
 
 - (_FDViewControllerWillAppearInjectBlock)fd_willAppearInjectBlock
 {
@@ -241,6 +248,15 @@ typedef void (^_FDViewControllerWillAppearInjectBlock)(UIViewController *viewCon
 
 @implementation UIViewController (FDFullscreenPopGesture)
 
+- (void)fd_viewWillAppear:(BOOL)animated
+{
+    // Forward to primary implementation.
+    //    [self fd_viewWillAppear:animated];
+    
+    if (self.fd_willAppearInjectBlock) {
+        self.fd_willAppearInjectBlock(self, animated);
+    }
+}
 - (BOOL)fd_interactivePopDisabled
 {
     return [objc_getAssociatedObject(self, _cmd) boolValue];

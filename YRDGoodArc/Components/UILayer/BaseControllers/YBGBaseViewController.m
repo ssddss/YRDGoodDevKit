@@ -96,6 +96,7 @@
     self.currentHUD.bezelView.color = [UIColor clearColor];
     
 }
+
 #pragma mark - getters and setters
 
 

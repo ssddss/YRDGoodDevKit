@@ -36,7 +36,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (NSString *)pageId {
+    return @"YBGInheritViewPageId";
+}
 /*
 #pragma mark - Navigation
 

@@ -114,6 +114,13 @@
                                     <segue destination="SkD-jd-vVc" kind="show" id="pXP-gB-wj0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asa-Q2-jsu">
+                                <rect key="frame" x="182" y="221" width="30" height="30"/>
+                                <state key="normal" title="AOP"/>
+                                <connections>
+                                    <segue destination="zhX-MW-V8G" kind="show" id="kcg-Vb-Y2I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -373,7 +380,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" misplaced="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-tK-hHO">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-tK-hHO">
                                             <rect key="frame" x="16" y="149" width="62" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -447,6 +454,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coB-Wg-o7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2613" y="1794"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HHE-Ld-3Qt">
+            <objects>
+                <viewController id="zhX-MW-V8G" customClass="YBGAOPViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ydn-n7-mc0"/>
+                        <viewControllerLayoutGuide type="bottom" id="JPj-mG-c8A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="elj-oS-mJT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uhi-v8-gHg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3257" y="1794"/>
         </scene>
     </scenes>
 </document>
