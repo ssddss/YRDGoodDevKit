@@ -38,6 +38,7 @@
     self = [super init];
     if (self) {
 
+//        hook已经被交换过的方法会有崩溃
         /* 在这里做好方法拦截 */
         [YBGAOPViewController aspect_hookSelector:@selector(loadView) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
             [self loadView:[aspectInfo instance]];
@@ -57,6 +58,9 @@
         [UIViewController aspect_hookSelector:@selector(viewWillDisappear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated){
             [self viewWillDisappear:animated viewController:[aspectInfo instance]];
         }error:NULL];
+//        [UITableView aspect_hookSelector:@selector(reloadData) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+//            
+//        }error:NULL];
     }
     return self;
 }
