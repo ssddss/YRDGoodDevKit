@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 @interface YBGBaseViewController : UIViewController
 /**
- *  显示加载动画
+ *  显示本Controller显示位置的加载动画
  */
-- (void)showLoadingHUD;
+- (void)showLoadingHUDInView;
+/**
+ *  显示全屏的加载动画，tabbar 跟 navi都不能点击
+ */
+- (void)showLoadingHUDFullScreen;
 /**
  *  隐藏HUD
  */

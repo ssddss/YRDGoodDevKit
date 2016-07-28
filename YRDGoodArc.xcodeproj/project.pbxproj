@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		711031753C368D895300CAD3 /* libPods-YRDGoodArc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 524139B428E764F17159580F /* libPods-YRDGoodArc.a */; };
+		E513E6BF1D4992FE000B0809 /* YBGInheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E513E6BE1D4992FE000B0809 /* YBGInheritViewController.m */; };
 		E5340B101C9661AD00205879 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B0F1C9661AD00205879 /* main.m */; };
 		E5340B131C9661AD00205879 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B121C9661AD00205879 /* AppDelegate.m */; };
 		E5340B191C9661AD00205879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5340B171C9661AD00205879 /* Main.storyboard */; };
@@ -86,6 +87,8 @@
 		524139B428E764F17159580F /* libPods-YRDGoodArc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YRDGoodArc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE42E0FB5C29340E89F25B7 /* Pods-YRDGoodArc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YRDGoodArc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YRDGoodArc/Pods-YRDGoodArc.debug.xcconfig"; sourceTree = "<group>"; };
 		D00A1A3572EB534E01342B99 /* Pods-YRDGoodArc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YRDGoodArc.release.xcconfig"; path = "Pods/Target Support Files/Pods-YRDGoodArc/Pods-YRDGoodArc.release.xcconfig"; sourceTree = "<group>"; };
+		E513E6BD1D4992FE000B0809 /* YBGInheritViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGInheritViewController.h; sourceTree = "<group>"; };
+		E513E6BE1D4992FE000B0809 /* YBGInheritViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGInheritViewController.m; sourceTree = "<group>"; };
 		E5340B0B1C9661AD00205879 /* YRDGoodArc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YRDGoodArc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5340B0F1C9661AD00205879 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5340B111C9661AD00205879 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -263,6 +266,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E513E6BC1D4992E4000B0809 /* InheritBaseController */ = {
+			isa = PBXGroup;
+			children = (
+				E513E6BD1D4992FE000B0809 /* YBGInheritViewController.h */,
+				E513E6BE1D4992FE000B0809 /* YBGInheritViewController.m */,
+			);
+			path = InheritBaseController;
+			sourceTree = "<group>";
+		};
 		E5340B021C9661AD00205879 = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +340,7 @@
 		E5340B361C96A72900205879 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				E513E6BC1D4992E4000B0809 /* InheritBaseController */,
 				E57E4FF81D40D12300675B61 /* MVVMDemo */,
 				E59C31161D3F6F84006F4E63 /* Mediator */,
 				E57C84A81D1933E600311A06 /* RealmDemo */,
@@ -1093,6 +1106,7 @@
 				E598ACCD1CF4069B00294141 /* WeatherViewController.m in Sources */,
 				E5340B4B1C970F1500205879 /* AFAppDotNetAPIClient.m in Sources */,
 				E598ACCA1CF405E100294141 /* WeatherApiManager.m in Sources */,
+				E513E6BF1D4992FE000B0809 /* YBGInheritViewController.m in Sources */,
 				E559C5371D0022AD00E118E4 /* SchoolItem.m in Sources */,
 				E57E4FF71D40CE9D00675B61 /* YBGBaseModel.m in Sources */,
 				E598AC781CEF011700294141 /* NSMutableString+YRDNetworkingMethods.m in Sources */,

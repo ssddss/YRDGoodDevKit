@@ -17,11 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+
 }
 - (void)dealloc {
     NSLog(@"%s",__FUNCTION__);
@@ -33,30 +39,63 @@
 #pragma mark - event response
 
 #pragma mark - public methods
-- (void)showLoadingHUD {
-    
+- (void)showLoadingHUDInView {
+    [self showLoadingHUDInWindow:NO];
 }
+- (void)showLoadingHUDFullScreen {
+    [self showLoadingHUDInWindow:YES];
+
+}
+
 - (void)hideHUD {
-    
+    if (self.currentHUD) {
+        [self.currentHUD hideAnimated:NO];
+        self.currentHUD = nil;
+    }
 }
 - (void)showHUDWithText:(NSString *)text {
-    if (self.currentHUD) {
-//        self.currentH
-    }
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    [self hideHUD];
+    self.currentHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     // Set the annular determinate mode to show task progress.
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = NSLocalizedString(@"Message here!", @"HUD message title");
+    self.currentHUD.mode = MBProgressHUDModeText;
+    self.currentHUD.label.text = text ? :@"";
     // Move to bottm center.
-    //    hud.offset = CGPointMake(0.f, MBProgressMaxOffset);
-    hud.label.textColor = [UIColor whiteColor];
-    hud.bezelView.backgroundColor = [UIColor blackColor];
-    [hud hideAnimated:YES afterDelay:3.f];
+//    self.currentHUD.offset = CGPointMake(0.f, MBProgressMaxOffset);
+    self.currentHUD.label.textColor = [UIColor whiteColor];
+    self.currentHUD.bezelView.color = [UIColor blackColor];
+    [self.currentHUD hideAnimated:YES afterDelay:2.f];
 
 }
 #pragma mark - private methods
+/**
+ *  显示加载圈
+ *
+ *  @param isInWindow YES表示显示在整个屏幕上，NO显示在View的范围
+ */
+- (void)showLoadingHUDInWindow:(BOOL)isInWindow {
+    [self hideHUD];
 
+    if (isInWindow) {
+     self.currentHUD = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+
+    }
+    else {
+     self.currentHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    }
+    
+    // Set the label text.
+    self.currentHUD.label.text = @"Loading...";
+
+    // You can also adjust other label properties if needed.
+    // hud.label.font = [UIFont italicSystemFontOfSize:16.f];
+    self.currentHUD.contentColor = [UIColor greenColor];
+    self.currentHUD.label.textColor = [UIColor whiteColor];
+    self.currentHUD.backgroundView.color = [UIColor clearColor];
+    self.currentHUD.bezelView.color = [UIColor clearColor];
+    
+}
 #pragma mark - getters and setters
 
 
