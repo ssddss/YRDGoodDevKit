@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		711031753C368D895300CAD3 /* libPods-YRDGoodArc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 524139B428E764F17159580F /* libPods-YRDGoodArc.a */; };
 		E513E6BF1D4992FE000B0809 /* YBGInheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E513E6BE1D4992FE000B0809 /* YBGInheritViewController.m */; };
+		E513E6C71D49B646000B0809 /* FDFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E513E6C21D49B646000B0809 /* FDFeedCell.m */; };
+		E513E6C81D49B646000B0809 /* FDFeedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E513E6C41D49B646000B0809 /* FDFeedEntity.m */; };
+		E513E6C91D49B646000B0809 /* FDFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E513E6C61D49B646000B0809 /* FDFeedViewController.m */; };
+		E513E6CB1D49B655000B0809 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = E513E6CA1D49B655000B0809 /* data.json */; };
 		E5340B101C9661AD00205879 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B0F1C9661AD00205879 /* main.m */; };
 		E5340B131C9661AD00205879 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B121C9661AD00205879 /* AppDelegate.m */; };
 		E5340B191C9661AD00205879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5340B171C9661AD00205879 /* Main.storyboard */; };
@@ -89,6 +93,13 @@
 		D00A1A3572EB534E01342B99 /* Pods-YRDGoodArc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YRDGoodArc.release.xcconfig"; path = "Pods/Target Support Files/Pods-YRDGoodArc/Pods-YRDGoodArc.release.xcconfig"; sourceTree = "<group>"; };
 		E513E6BD1D4992FE000B0809 /* YBGInheritViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGInheritViewController.h; sourceTree = "<group>"; };
 		E513E6BE1D4992FE000B0809 /* YBGInheritViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGInheritViewController.m; sourceTree = "<group>"; };
+		E513E6C11D49B646000B0809 /* FDFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFeedCell.h; sourceTree = "<group>"; };
+		E513E6C21D49B646000B0809 /* FDFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDFeedCell.m; sourceTree = "<group>"; };
+		E513E6C31D49B646000B0809 /* FDFeedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFeedEntity.h; sourceTree = "<group>"; };
+		E513E6C41D49B646000B0809 /* FDFeedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDFeedEntity.m; sourceTree = "<group>"; };
+		E513E6C51D49B646000B0809 /* FDFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFeedViewController.h; sourceTree = "<group>"; };
+		E513E6C61D49B646000B0809 /* FDFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDFeedViewController.m; sourceTree = "<group>"; };
+		E513E6CA1D49B655000B0809 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		E5340B0B1C9661AD00205879 /* YRDGoodArc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YRDGoodArc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5340B0F1C9661AD00205879 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5340B111C9661AD00205879 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -275,6 +286,20 @@
 			path = InheritBaseController;
 			sourceTree = "<group>";
 		};
+		E513E6C01D49B619000B0809 /* FDTemplateCellDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E513E6CA1D49B655000B0809 /* data.json */,
+				E513E6C11D49B646000B0809 /* FDFeedCell.h */,
+				E513E6C21D49B646000B0809 /* FDFeedCell.m */,
+				E513E6C31D49B646000B0809 /* FDFeedEntity.h */,
+				E513E6C41D49B646000B0809 /* FDFeedEntity.m */,
+				E513E6C51D49B646000B0809 /* FDFeedViewController.h */,
+				E513E6C61D49B646000B0809 /* FDFeedViewController.m */,
+			);
+			path = FDTemplateCellDemo;
+			sourceTree = "<group>";
+		};
 		E5340B021C9661AD00205879 = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +365,7 @@
 		E5340B361C96A72900205879 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				E513E6C01D49B619000B0809 /* FDTemplateCellDemo */,
 				E513E6BC1D4992E4000B0809 /* InheritBaseController */,
 				E57E4FF81D40D12300675B61 /* MVVMDemo */,
 				E59C31161D3F6F84006F4E63 /* Mediator */,
@@ -1023,6 +1049,7 @@
 				E5340B1E1C9661AD00205879 /* LaunchScreen.storyboard in Resources */,
 				E5340B1B1C9661AD00205879 /* Assets.xcassets in Resources */,
 				E5340B191C9661AD00205879 /* Main.storyboard in Resources */,
+				E513E6CB1D49B655000B0809 /* data.json in Resources */,
 				E59C310F1D3F6D20006F4E63 /* YBGMediatorErrorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1085,6 +1112,7 @@
 				E5340B3D1C96A72900205879 /* SecondViewController.m in Sources */,
 				E57E500F1D40D1B500675B61 /* SDHomeSubjectsViewModel.m in Sources */,
 				E598ACA01CF2B36700294141 /* YRDCache.m in Sources */,
+				E513E6C81D49B646000B0809 /* FDFeedEntity.m in Sources */,
 				E5DA70291D01594A008E9724 /* YRDServiceYiBaoGao.m in Sources */,
 				E59C31191D3F7030006F4E63 /* MediatorViewController.m in Sources */,
 				E57E50071D40D18300675B61 /* SDBannerView.m in Sources */,
@@ -1127,10 +1155,12 @@
 				E57C84B31D1938BE00311A06 /* RealmBook.m in Sources */,
 				E5DA70261D01594A008E9724 /* YRDAppContext.m in Sources */,
 				E598AC9D1CF2B17F00294141 /* YRDCachedObject.m in Sources */,
+				E513E6C91D49B646000B0809 /* FDFeedViewController.m in Sources */,
 				E57E500E1D40D1B500675B61 /* SDHomeSubjectsCollectionCellViewModel.m in Sources */,
 				E598AC6F1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.m in Sources */,
 				E57E4FF01D40C5C600675B61 /* YBGBaseDataController.m in Sources */,
 				E559C52C1D001B7B00E118E4 /* HTTPPostTableViewController.m in Sources */,
+				E513E6C71D49B646000B0809 /* FDFeedCell.m in Sources */,
 				E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */,
 				E5340B131C9661AD00205879 /* AppDelegate.m in Sources */,
 				E58D746F1D4737F8002D1120 /* YBGBaseViewController.m in Sources */,
