@@ -17,11 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setText:@"haha" withCount:4];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)setText:(NSString *)text withCount:(NSInteger)count {
+    NSLog(@"text:%@ and count:%ld",text,count);
 }
 
 /*

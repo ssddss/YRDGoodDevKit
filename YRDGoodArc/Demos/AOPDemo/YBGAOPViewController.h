@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface YBGAOPViewController : UIViewController
+- (void)setText:(NSString *)text withCount:(NSInteger)count;
 
 @end
