@@ -29,6 +29,7 @@
 		E5340B511C97103300205879 /* AFNDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B501C97103300205879 /* AFNDemoViewController.m */; };
 		E5435DA21D49DB140021493F /* YBGViewControllerIntercepter.m in Sources */ = {isa = PBXBuildFile; fileRef = E5435DA11D49DB140021493F /* YBGViewControllerIntercepter.m */; };
 		E5435DA91D49DE820021493F /* YBGAOPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5435DA81D49DE820021493F /* YBGAOPViewController.m */; };
+		E5435DB31D4EF80D0021493F /* YBGPullToRefreshDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5435DB21D4EF80D0021493F /* YBGPullToRefreshDemoViewController.m */; };
 		E559C52C1D001B7B00E118E4 /* HTTPPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C52B1D001B7B00E118E4 /* HTTPPostTableViewController.m */; };
 		E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C52E1D001C6E00E118E4 /* YiBaoGaoApiManager.m */; };
 		E559C5331D00217600E118E4 /* SchoolListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C5321D00217600E118E4 /* SchoolListReformer.m */; };
@@ -133,6 +134,8 @@
 		E5435DA11D49DB140021493F /* YBGViewControllerIntercepter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGViewControllerIntercepter.m; sourceTree = "<group>"; };
 		E5435DA71D49DE820021493F /* YBGAOPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGAOPViewController.h; sourceTree = "<group>"; };
 		E5435DA81D49DE820021493F /* YBGAOPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGAOPViewController.m; sourceTree = "<group>"; };
+		E5435DB11D4EF80D0021493F /* YBGPullToRefreshDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGPullToRefreshDemoViewController.h; sourceTree = "<group>"; };
+		E5435DB21D4EF80D0021493F /* YBGPullToRefreshDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGPullToRefreshDemoViewController.m; sourceTree = "<group>"; };
 		E559C52A1D001B7B00E118E4 /* HTTPPostTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPPostTableViewController.h; sourceTree = "<group>"; };
 		E559C52B1D001B7B00E118E4 /* HTTPPostTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPPostTableViewController.m; sourceTree = "<group>"; };
 		E559C52D1D001C6E00E118E4 /* YiBaoGaoApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiBaoGaoApiManager.h; sourceTree = "<group>"; };
@@ -371,6 +374,7 @@
 		E5340B361C96A72900205879 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				E5435DB01D4EF7FA0021493F /* PullToRefreshDemo */,
 				E5435DA61D49DE820021493F /* AOPDemo */,
 				E513E6C01D49B619000B0809 /* FDTemplateCellDemo */,
 				E513E6BC1D4992E4000B0809 /* InheritBaseController */,
@@ -446,6 +450,15 @@
 				E5435DA81D49DE820021493F /* YBGAOPViewController.m */,
 			);
 			path = AOPDemo;
+			sourceTree = "<group>";
+		};
+		E5435DB01D4EF7FA0021493F /* PullToRefreshDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E5435DB11D4EF80D0021493F /* YBGPullToRefreshDemoViewController.h */,
+				E5435DB21D4EF80D0021493F /* YBGPullToRefreshDemoViewController.m */,
+			);
+			path = PullToRefreshDemo;
 			sourceTree = "<group>";
 		};
 		E559C5301D00215900E118E4 /* DataReformer */ = {
@@ -1053,7 +1066,7 @@
 				TargetAttributes = {
 					E5340B0A1C9661AD00205879 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = FU8K87M93N;
+						DevelopmentTeam = K8Q48D44XL;
 					};
 				};
 			};
@@ -1203,6 +1216,7 @@
 				E59C31221D3F71EF006F4E63 /* DemoModuleADetailViewController.m in Sources */,
 				E5DA70031D0157B4008E9724 /* YRDURLResponse.m in Sources */,
 				E57C84B61D1A723900311A06 /* JSONCity.m in Sources */,
+				E5435DB31D4EF80D0021493F /* YBGPullToRefreshDemoViewController.m in Sources */,
 				E598ACA71CF2E48400294141 /* YRDLogger.m in Sources */,
 				E5340B511C97103300205879 /* AFNDemoViewController.m in Sources */,
 				E598AC6C1CEEFAF400294141 /* NSDictionary+YRDNetworkingMethods.m in Sources */,

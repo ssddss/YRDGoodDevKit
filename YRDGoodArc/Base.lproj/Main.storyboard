@@ -5,6 +5,39 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Pull To Refresh Demo View Controller-->
+        <scene sceneID="ooK-pZ-tKt">
+            <objects>
+                <viewController id="de2-LG-cXU" customClass="YBGPullToRefreshDemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pck-2E-3zU"/>
+                        <viewControllerLayoutGuide type="bottom" id="lBt-SY-0R3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0ai-BJ-pXS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5r2-Wr-hRO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5r2-Wr-hRO" firstAttribute="leading" secondItem="0ai-BJ-pXS" secondAttribute="leading" id="4me-Fb-qqn"/>
+                            <constraint firstAttribute="trailing" secondItem="5r2-Wr-hRO" secondAttribute="trailing" id="6Sn-2k-LO4"/>
+                            <constraint firstItem="5r2-Wr-hRO" firstAttribute="top" secondItem="0ai-BJ-pXS" secondAttribute="top" id="iU8-zy-EZ7"/>
+                            <constraint firstAttribute="bottom" secondItem="5r2-Wr-hRO" secondAttribute="bottom" id="uYK-he-l6c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableVeiw" destination="5r2-Wr-hRO" id="Ck7-V9-Y8B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQ7-DR-hEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="-995"/>
+        </scene>
         <!--Demo View Controller-->
         <scene sceneID="oID-HM-NnM">
             <objects>
@@ -119,6 +152,13 @@
                                 <state key="normal" title="AOP"/>
                                 <connections>
                                     <segue destination="zhX-MW-V8G" kind="show" id="kcg-Vb-Y2I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGB-qx-XvJ">
+                                <rect key="frame" x="155" y="276" width="75" height="30"/>
+                                <state key="normal" title="上下拉刷新"/>
+                                <connections>
+                                    <segue destination="de2-LG-cXU" kind="show" id="ILx-PD-8zS"/>
                                 </connections>
                             </button>
                         </subviews>
