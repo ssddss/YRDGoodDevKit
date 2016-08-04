@@ -10,5 +10,10 @@
 
 @interface YBGAOPViewController : UIViewController
 - (void)setText:(NSString *)text withCount:(NSInteger)count;
+- (void)doApiRequest;
+
+- (IBAction)LoginAction:(UIButton *)sender;
+- (IBAction)playGameAction:(UIButton *)sender;
+- (IBAction)walkMyDogAction:(UIButton *)sender;
 
 @end

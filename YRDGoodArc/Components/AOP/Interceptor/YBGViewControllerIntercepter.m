@@ -8,7 +8,6 @@
 
 #import "YBGViewControllerIntercepter.h"
 #import <Aspects/Aspects.h>
-#import "YBGAOPViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
 @implementation YBGViewControllerIntercepter
@@ -40,15 +39,7 @@
 
 //        hook已经被交换过的方法会有崩溃
         /* 在这里做好方法拦截 */
-        [YBGAOPViewController aspect_hookSelector:@selector(loadView) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
-            [self loadView:[aspectInfo instance]];
-        } error:NULL];
-        [YBGAOPViewController aspect_hookSelector:@selector(setText:withCount:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo,  NSString *text1, NSInteger count){
-            //要按顺序返回参数，否则不会成功
-            
-            NSLog(@"hook text:%@ count:%ld",text1,count);
-        }error:NULL];
-        //注意要调用 FD的viewillAppear，不然导航显示的时候会有问题
+            //注意要调用 FD的viewillAppear，不然导航显示的时候会有问题
         [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated){
             [self viewWillAppear:animated viewController:[aspectInfo instance]];
         } error:NULL];

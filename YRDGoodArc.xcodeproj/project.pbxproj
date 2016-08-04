@@ -27,6 +27,8 @@
 		E5340B4B1C970F1500205879 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B4A1C970F1500205879 /* AFAppDotNetAPIClient.m */; };
 		E5340B4E1C970F4B00205879 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B4D1C970F4B00205879 /* Request.m */; };
 		E5340B511C97103300205879 /* AFNDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5340B501C97103300205879 /* AFNDemoViewController.m */; };
+		E538E2E81D52D773007EB5C3 /* NSDictionary+Events.m in Sources */ = {isa = PBXBuildFile; fileRef = E538E2E71D52D773007EB5C3 /* NSDictionary+Events.m */; };
+		E538E2EF1D52D8CF007EB5C3 /* YBGAOPViewControllerInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E538E2EE1D52D8CF007EB5C3 /* YBGAOPViewControllerInterceptor.m */; };
 		E5435DA21D49DB140021493F /* YBGViewControllerIntercepter.m in Sources */ = {isa = PBXBuildFile; fileRef = E5435DA11D49DB140021493F /* YBGViewControllerIntercepter.m */; };
 		E5435DA91D49DE820021493F /* YBGAOPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5435DA81D49DE820021493F /* YBGAOPViewController.m */; };
 		E5435DB31D4EF80D0021493F /* YBGPullToRefreshDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5435DB21D4EF80D0021493F /* YBGPullToRefreshDemoViewController.m */; };
@@ -130,6 +132,10 @@
 		E5340B4D1C970F4B00205879 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		E5340B4F1C97103300205879 /* AFNDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNDemoViewController.h; sourceTree = "<group>"; };
 		E5340B501C97103300205879 /* AFNDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNDemoViewController.m; sourceTree = "<group>"; };
+		E538E2E61D52D773007EB5C3 /* NSDictionary+Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Events.h"; sourceTree = "<group>"; };
+		E538E2E71D52D773007EB5C3 /* NSDictionary+Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Events.m"; sourceTree = "<group>"; };
+		E538E2ED1D52D8CF007EB5C3 /* YBGAOPViewControllerInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGAOPViewControllerInterceptor.h; sourceTree = "<group>"; };
+		E538E2EE1D52D8CF007EB5C3 /* YBGAOPViewControllerInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGAOPViewControllerInterceptor.m; sourceTree = "<group>"; };
 		E5435DA01D49DB140021493F /* YBGViewControllerIntercepter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGViewControllerIntercepter.h; sourceTree = "<group>"; };
 		E5435DA11D49DB140021493F /* YBGViewControllerIntercepter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGViewControllerIntercepter.m; sourceTree = "<group>"; };
 		E5435DA71D49DE820021493F /* YBGAOPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGAOPViewController.h; sourceTree = "<group>"; };
@@ -426,6 +432,24 @@
 			path = AFNetworkingDemo;
 			sourceTree = "<group>";
 		};
+		E538E2E51D52D74E007EB5C3 /* EventPointing */ = {
+			isa = PBXGroup;
+			children = (
+				E538E2E61D52D773007EB5C3 /* NSDictionary+Events.h */,
+				E538E2E71D52D773007EB5C3 /* NSDictionary+Events.m */,
+			);
+			path = EventPointing;
+			sourceTree = "<group>";
+		};
+		E538E2E91D52D88D007EB5C3 /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				E538E2ED1D52D8CF007EB5C3 /* YBGAOPViewControllerInterceptor.h */,
+				E538E2EE1D52D8CF007EB5C3 /* YBGAOPViewControllerInterceptor.m */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
 		E5435D9E1D49DAFD0021493F /* AOP */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +470,8 @@
 		E5435DA61D49DE820021493F /* AOPDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E538E2E91D52D88D007EB5C3 /* Interceptor */,
+				E538E2E51D52D74E007EB5C3 /* EventPointing */,
 				E5435DA71D49DE820021493F /* YBGAOPViewController.h */,
 				E5435DA81D49DE820021493F /* YBGAOPViewController.m */,
 			);
@@ -1209,8 +1235,10 @@
 				E559C52C1D001B7B00E118E4 /* HTTPPostTableViewController.m in Sources */,
 				E513E6C71D49B646000B0809 /* FDFeedCell.m in Sources */,
 				E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */,
+				E538E2EF1D52D8CF007EB5C3 /* YBGAOPViewControllerInterceptor.m in Sources */,
 				E5340B131C9661AD00205879 /* AppDelegate.m in Sources */,
 				E58D746F1D4737F8002D1120 /* YBGBaseViewController.m in Sources */,
+				E538E2E81D52D773007EB5C3 /* NSDictionary+Events.m in Sources */,
 				E59C31251D3F7222006F4E63 /* YBGMediator+YBGMediatorModuleAActions.m in Sources */,
 				E5340B101C9661AD00205879 /* main.m in Sources */,
 				E59C31221D3F71EF006F4E63 /* DemoModuleADetailViewController.m in Sources */,

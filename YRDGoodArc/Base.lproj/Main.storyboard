@@ -506,6 +506,29 @@
                     <view key="view" contentMode="scaleToFill" id="elj-oS-mJT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-cS-Rxh">
+                                <rect key="frame" x="56" y="113" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="LoginAction:" destination="zhX-MW-V8G" eventType="touchUpInside" id="4TP-WR-Fxq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsW-Bc-zSg">
+                                <rect key="frame" x="41" y="172" width="69" height="30"/>
+                                <state key="normal" title="PlayGame"/>
+                                <connections>
+                                    <action selector="playGameAction:" destination="zhX-MW-V8G" eventType="touchUpInside" id="8bu-bn-mfX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQb-HS-ITX">
+                                <rect key="frame" x="41" y="232" width="83" height="30"/>
+                                <state key="normal" title="WalkMyDog"/>
+                                <connections>
+                                    <action selector="walkMyDogAction:" destination="zhX-MW-V8G" eventType="touchUpInside" id="bWY-A4-N7C"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

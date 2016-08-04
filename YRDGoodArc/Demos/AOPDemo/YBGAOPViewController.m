@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setText:@"haha" withCount:4];
+    [self doApiRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +28,9 @@
 - (void)setText:(NSString *)text withCount:(NSInteger)count {
     NSLog(@"text:%@ and count:%ld",text,count);
 }
-
+- (void)doApiRequest {
+    NSLog(@"doApiRequest");
+}
 /*
 #pragma mark - Navigation
 
@@ -37,5 +40,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)dealloc {
+    NSLog(@"%s",__FUNCTION__);
+}
+- (IBAction)LoginAction:(UIButton *)sender {
+    NSLog(@"登录");
+}
 
+- (IBAction)playGameAction:(UIButton *)sender {
+    NSLog(@"打游戏");
+}
+
+- (IBAction)walkMyDogAction:(UIButton *)sender {
+    NSLog(@"溜狗");
+}
 @end
