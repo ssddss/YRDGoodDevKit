@@ -90,27 +90,81 @@
 - (NSURLRequest *)generateRestfulPOSTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName
 {
     YRDService *service = [[YRDServiceFactory sharedInstance] serviceWithIdentifier:serviceIdentifier];
+//    设备的参数信息,及其他的参数
     NSDictionary *commonParams = [YRDCommonParamsGenerator commonParamsDictionary];
-    NSString *signature = [YRDSignatureGenerator signRestfulPOSTWithApiParams:requestParams commonParams:commonParams methodName:methodName apiVersion:service.apiVersion privateKey:service.privateKey];
-    NSString *urlString = [NSString stringWithFormat:@"%@%@/%@?&%@", service.apiBaseUrl, service.apiVersion, methodName, [commonParams YRD_urlParamsStringSignature:NO]];
     
+    //最终参数
+    NSMutableDictionary *finalRequstParams = [NSMutableDictionary dictionaryWithDictionary:requestParams];
+    [finalRequstParams addEntriesFromDictionary:commonParams];
+    
+    NSString *signature = [YRDSignatureGenerator signRestfulPOSTWithApiParams:requestParams commonParams:commonParams methodName:methodName apiVersion:service.apiVersion privateKey:service.privateKey];
+//    NSString *urlString = [NSString stringWithFormat:@"%@%@/%@?&%@", service.apiBaseUrl, service.apiVersion, methodName, [commonParams YRD_urlParamsStringSignature:NO]];
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@", service.apiBaseUrl, methodName];
+
     NSDictionary *restfulHeader = [self commRESTHeadersWithService:service signature:signature];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:kYRDNetworkingTimeoutSeconds];
     request.HTTPMethod = @"POST";
     [restfulHeader enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [request setValue:obj forHTTPHeaderField:key];
     }];
-    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:requestParams options:NSJSONWritingPrettyPrinted error:NULL];
+    if (finalRequstParams) {
+        request.HTTPBody = [NSJSONSerialization dataWithJSONObject:finalRequstParams options:NSJSONWritingPrettyPrinted error:NULL];
+    }
     request.requestParams = requestParams;
     [YRDLogger logDebugInfoWithRequest:request apiName:methodName service:service requestParams:requestParams httpMethod:@"RESTful POST"];
+    return request;
+}
+- (NSURLRequest *)generateRestfulPUTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName
+{
+    YRDService *service = [[YRDServiceFactory sharedInstance] serviceWithIdentifier:serviceIdentifier];
+    NSDictionary *commonParams = [YRDCommonParamsGenerator commonParamsDictionary];
+    NSString *signature = [YRDSignatureGenerator signRestfulPOSTWithApiParams:requestParams commonParams:commonParams methodName:methodName apiVersion:service.apiVersion privateKey:service.privateKey];
+    //    NSString *urlString = [NSString stringWithFormat:@"%@%@/%@?&%@", service.apiBaseUrl, service.apiVersion, methodName, [commonParams YRD_urlParamsStringSignature:NO]];
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@", service.apiBaseUrl, methodName];
+    
+    NSDictionary *restfulHeader = [self commRESTHeadersWithService:service signature:signature];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:kYRDNetworkingTimeoutSeconds];
+    request.HTTPMethod = @"PUT";
+    [restfulHeader enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [request setValue:obj forHTTPHeaderField:key];
+    }];
+    if (requestParams) {
+        request.HTTPBody = [NSJSONSerialization dataWithJSONObject:requestParams options:NSJSONWritingPrettyPrinted error:NULL];
+    }
+    request.requestParams = requestParams;
+    [YRDLogger logDebugInfoWithRequest:request apiName:methodName service:service requestParams:requestParams httpMethod:@"RESTful PUT"];
+    return request;
+}
+- (NSURLRequest *)generateRestfulDELETERequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName
+{
+    YRDService *service = [[YRDServiceFactory sharedInstance] serviceWithIdentifier:serviceIdentifier];
+    NSDictionary *commonParams = [YRDCommonParamsGenerator commonParamsDictionary];
+    NSString *signature = [YRDSignatureGenerator signRestfulPOSTWithApiParams:requestParams commonParams:commonParams methodName:methodName apiVersion:service.apiVersion privateKey:service.privateKey];
+    //    NSString *urlString = [NSString stringWithFormat:@"%@%@/%@?&%@", service.apiBaseUrl, service.apiVersion, methodName, [commonParams YRD_urlParamsStringSignature:NO]];
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@", service.apiBaseUrl, methodName];
+    
+    NSDictionary *restfulHeader = [self commRESTHeadersWithService:service signature:signature];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:kYRDNetworkingTimeoutSeconds];
+    request.HTTPMethod = @"DELETE";
+    [restfulHeader enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [request setValue:obj forHTTPHeaderField:key];
+    }];
+    if (requestParams) {
+        request.HTTPBody = [NSJSONSerialization dataWithJSONObject:requestParams options:NSJSONWritingPrettyPrinted error:NULL];
+    }
+    request.requestParams = requestParams;
+    [YRDLogger logDebugInfoWithRequest:request apiName:methodName service:service requestParams:requestParams httpMethod:@"RESTful DELETE"];
     return request;
 }
 #pragma mark - private methods
 - (NSDictionary *)commRESTHeadersWithService:(YRDService *)service signature:(NSString *)signature
 {
     NSMutableDictionary *headerDic = [NSMutableDictionary dictionary];
-    [headerDic setValue:signature forKey:@"sig"];
-    [headerDic setValue:service.publicKey forKey:@"key"];
+//    [headerDic setValue:signature forKey:@"sig"];
+//    [headerDic setValue:service.publicKey forKey:@"key"];
+    //要使用到的token
+    [headerDic setValue:@"12345" forKey:@"token"];
+
     [headerDic setValue:@"application/json" forKey:@"Accept"];
     [headerDic setValue:@"application/json" forKey:@"Content-Type"];
    

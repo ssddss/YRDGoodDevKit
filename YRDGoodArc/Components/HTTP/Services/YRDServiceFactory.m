@@ -8,9 +8,7 @@
 
 #import "YRDServiceFactory.h"
 #import "YRDNetworkingConfiguration.h"
-#import "YRDServiceYiBaoGao.h"
-#import "WeatherService.h"
-#import "YRDServiceChangable.h"
+
 
 NSString * const kYRDServiceYibaogao = @"YiBaoGao";
 NSString *const kYRDServiceWeather = @"weather";
@@ -44,18 +42,17 @@ NSString *const kYRDServiceChangable = @"ChangableServiceUrl";
 #pragma mark - private methods
 - (YRDService<YRDServiceProtocal> *)newServiceWithIdentifier:(NSString *)identifier
 {
-    // YiBaoGao
-    if ([identifier isEqualToString:kYRDServiceYibaogao]) {
-        return [[YRDServiceYiBaoGao alloc] init];
+    //一定要提供service的类名
+    if (identifier.length==0) {
+        NSException *exception = [[NSException alloc] init];
+        @throw exception;
+
+        return nil;
     }
-  
-    else if ([identifier isEqualToString:kYRDServiceWeather]) {
-        return [[WeatherService alloc]init];
-    }
-    else if ([identifier isEqualToString:kYRDServiceChangable]) {
-        return [[YRDServiceChangable alloc]init];
-    }
-    return nil;
+//    根据service的类名动态创建
+    Class serviceClazz = NSClassFromString(identifier);
+    return [[serviceClazz alloc]init];
+ 
 }
 
 #pragma mark - getters and setters

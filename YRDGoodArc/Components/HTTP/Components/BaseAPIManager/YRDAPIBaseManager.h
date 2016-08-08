@@ -136,7 +136,9 @@ typedef NS_ENUM (NSUInteger, YRDAPIManagerRequestType){
     YRDAPIManagerRequestTypeGet,
     YRDAPIManagerRequestTypePost,
     YRDAPIManagerRequestTypeRestGet,
-    YRDAPIManagerRequestTypeRestPost
+    YRDAPIManagerRequestTypeRestPost,
+    YRDAPIManagerRequestTypeRestPut,
+    YRDAPIManagerRequestTypeRestDelete
 };
 
 /*************************************************************************************************/
@@ -148,13 +150,41 @@ typedef NS_ENUM (NSUInteger, YRDAPIManagerRequestType){
 @protocol  YRDAPIManager <NSObject>
 
 @required
+/**
+ *  访问地址后缀
+ *
+ *  @return
+ */
 - (NSString *)methodName;
+/**
+ *  这个参数填写Service的类名，比如YBGRestfulTestService,用动态创建类的方法来创建，减少service的引入。
+ *
+ *  @return 服务器地址类的类名
+ */
 - (NSString *)serviceType;
+/**
+ *  请求的方式,get,restfulGet,Post,RestfulPost,RestfulPut,RestfulDelete
+ *
+ *  @return 请求的方式
+ */
 - (YRDAPIManagerRequestType)requestType;
 
 @optional
 - (void)cleanData;
+/**
+ *  //如果需要在调用API之前额外添加一些参数，比如pageNumber和pageSize之类的就在这里添加
+ //子类中覆盖这个函数的时候就不需要调用[super reformParams:params]了
+ *
+ *  @param params <#params description#>
+ *
+ *  @return <#return value description#>
+ */
 - (NSDictionary *)reformParams:(NSDictionary *)params;
+/**
+ *  是否缓存这个接口的数据
+ *
+ *  @return
+ */
 - (BOOL)shouldCache;
 /**
  *  检查同一请求是否已经发起，如果发起取消之前的请求，默认取消当前请求

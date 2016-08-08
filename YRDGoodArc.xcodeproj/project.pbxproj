@@ -36,7 +36,15 @@
 		E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C52E1D001C6E00E118E4 /* YiBaoGaoApiManager.m */; };
 		E559C5331D00217600E118E4 /* SchoolListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C5321D00217600E118E4 /* SchoolListReformer.m */; };
 		E559C5371D0022AD00E118E4 /* SchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C5361D0022AD00E118E4 /* SchoolItem.m */; };
-		E57C205C1D067C680063ABDD /* YRDServiceChangable.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C205B1D067C680063ABDD /* YRDServiceChangable.m */; };
+		E571E2BB1D58309600918EF1 /* YBGRestfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2BA1D58309600918EF1 /* YBGRestfulViewController.m */; };
+		E571E2BE1D58325200918EF1 /* YBGRestfulGetApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2BD1D58325200918EF1 /* YBGRestfulGetApiManager.m */; };
+		E571E2C21D58342500918EF1 /* YBGRestfulTestService.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2C11D58342500918EF1 /* YBGRestfulTestService.m */; };
+		E571E2C51D583A4800918EF1 /* YBGRestfulPostApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2C41D583A4800918EF1 /* YBGRestfulPostApiManager.m */; };
+		E571E2C81D5888C300918EF1 /* YBGRestfulPutApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2C71D5888C300918EF1 /* YBGRestfulPutApiManager.m */; };
+		E571E2CB1D5888D500918EF1 /* YBGRestfulDeleteApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2CA1D5888D500918EF1 /* YBGRestfulDeleteApiManager.m */; };
+		E571E2E51D58917100918EF1 /* YRDServiceChangable.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2DE1D58917100918EF1 /* YRDServiceChangable.m */; };
+		E571E2E61D58917100918EF1 /* WeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2E11D58917100918EF1 /* WeatherService.m */; };
+		E571E2E71D58917100918EF1 /* YRDServiceYiBaoGao.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2E41D58917100918EF1 /* YRDServiceYiBaoGao.m */; };
 		E57C84AD1D1933FF00311A06 /* RealmDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C84AC1D1933FF00311A06 /* RealmDemoViewController.m */; };
 		E57C84B01D19353A00311A06 /* RealmDog.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C84AF1D19353A00311A06 /* RealmDog.m */; };
 		E57C84B31D1938BE00311A06 /* RealmBook.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C84B21D1938BE00311A06 /* RealmBook.m */; };
@@ -87,8 +95,6 @@
 		E5DA70161D015836008E9724 /* YRDUDIDGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DA70121D015836008E9724 /* YRDUDIDGenerator.m */; };
 		E5DA70261D01594A008E9724 /* YRDAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DA701A1D01594A008E9724 /* YRDAppContext.m */; };
 		E5DA70271D01594A008E9724 /* YRDLoggerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DA701D1D01594A008E9724 /* YRDLoggerConfiguration.m */; };
-		E5DA70281D01594A008E9724 /* WeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DA70221D01594A008E9724 /* WeatherService.m */; };
-		E5DA70291D01594A008E9724 /* YRDServiceYiBaoGao.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DA70251D01594A008E9724 /* YRDServiceYiBaoGao.m */; };
 		E5DA702D1D017396008E9724 /* YRDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DA702C1D017396008E9724 /* YRDLocationManager.m */; };
 /* End PBXBuildFile section */
 
@@ -150,8 +156,24 @@
 		E559C5321D00217600E118E4 /* SchoolListReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolListReformer.m; sourceTree = "<group>"; };
 		E559C5351D0022AD00E118E4 /* SchoolItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolItem.h; sourceTree = "<group>"; };
 		E559C5361D0022AD00E118E4 /* SchoolItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolItem.m; sourceTree = "<group>"; };
-		E57C205A1D067C680063ABDD /* YRDServiceChangable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDServiceChangable.h; sourceTree = "<group>"; };
-		E57C205B1D067C680063ABDD /* YRDServiceChangable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDServiceChangable.m; sourceTree = "<group>"; };
+		E571E2B91D58309600918EF1 /* YBGRestfulViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulViewController.h; sourceTree = "<group>"; };
+		E571E2BA1D58309600918EF1 /* YBGRestfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulViewController.m; sourceTree = "<group>"; };
+		E571E2BC1D58325200918EF1 /* YBGRestfulGetApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulGetApiManager.h; sourceTree = "<group>"; };
+		E571E2BD1D58325200918EF1 /* YBGRestfulGetApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulGetApiManager.m; sourceTree = "<group>"; };
+		E571E2C01D58342500918EF1 /* YBGRestfulTestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulTestService.h; sourceTree = "<group>"; };
+		E571E2C11D58342500918EF1 /* YBGRestfulTestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulTestService.m; sourceTree = "<group>"; };
+		E571E2C31D583A4800918EF1 /* YBGRestfulPostApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulPostApiManager.h; sourceTree = "<group>"; };
+		E571E2C41D583A4800918EF1 /* YBGRestfulPostApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulPostApiManager.m; sourceTree = "<group>"; };
+		E571E2C61D5888C300918EF1 /* YBGRestfulPutApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulPutApiManager.h; sourceTree = "<group>"; };
+		E571E2C71D5888C300918EF1 /* YBGRestfulPutApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulPutApiManager.m; sourceTree = "<group>"; };
+		E571E2C91D5888D500918EF1 /* YBGRestfulDeleteApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulDeleteApiManager.h; sourceTree = "<group>"; };
+		E571E2CA1D5888D500918EF1 /* YBGRestfulDeleteApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulDeleteApiManager.m; sourceTree = "<group>"; };
+		E571E2DD1D58917100918EF1 /* YRDServiceChangable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDServiceChangable.h; sourceTree = "<group>"; };
+		E571E2DE1D58917100918EF1 /* YRDServiceChangable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDServiceChangable.m; sourceTree = "<group>"; };
+		E571E2E01D58917100918EF1 /* WeatherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherService.h; sourceTree = "<group>"; };
+		E571E2E11D58917100918EF1 /* WeatherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherService.m; sourceTree = "<group>"; };
+		E571E2E31D58917100918EF1 /* YRDServiceYiBaoGao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDServiceYiBaoGao.h; sourceTree = "<group>"; };
+		E571E2E41D58917100918EF1 /* YRDServiceYiBaoGao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDServiceYiBaoGao.m; sourceTree = "<group>"; };
 		E57C205F1D06CB1F0063ABDD /* MethodsMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodsMacro.h; sourceTree = "<group>"; };
 		E57C20601D06CB1F0063ABDD /* YRDGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDGeneral.h; sourceTree = "<group>"; };
 		E57C84AB1D1933FF00311A06 /* RealmDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmDemoViewController.h; sourceTree = "<group>"; };
@@ -255,10 +277,6 @@
 		E5DA701C1D01594A008E9724 /* YRDLoggerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDLoggerConfiguration.h; sourceTree = "<group>"; };
 		E5DA701D1D01594A008E9724 /* YRDLoggerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDLoggerConfiguration.m; sourceTree = "<group>"; };
 		E5DA701E1D01594A008E9724 /* YRDNetworkingConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDNetworkingConfiguration.h; sourceTree = "<group>"; };
-		E5DA70211D01594A008E9724 /* WeatherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherService.h; sourceTree = "<group>"; };
-		E5DA70221D01594A008E9724 /* WeatherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherService.m; sourceTree = "<group>"; };
-		E5DA70241D01594A008E9724 /* YRDServiceYiBaoGao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDServiceYiBaoGao.h; sourceTree = "<group>"; };
-		E5DA70251D01594A008E9724 /* YRDServiceYiBaoGao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDServiceYiBaoGao.m; sourceTree = "<group>"; };
 		E5DA702B1D017396008E9724 /* YRDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDLocationManager.h; sourceTree = "<group>"; };
 		E5DA702C1D017396008E9724 /* YRDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDLocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -380,6 +398,8 @@
 		E5340B361C96A72900205879 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				E571E2DA1D58917100918EF1 /* GlobalHelpers */,
+				E571E2B51D58307E00918EF1 /* Restful */,
 				E5435DB01D4EF7FA0021493F /* PullToRefreshDemo */,
 				E5435DA61D49DE820021493F /* AOPDemo */,
 				E513E6C01D49B619000B0809 /* FDTemplateCellDemo */,
@@ -505,13 +525,100 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E57C20591D067C430063ABDD /* ChangableService */ = {
+		E571E2B51D58307E00918EF1 /* Restful */ = {
 			isa = PBXGroup;
 			children = (
-				E57C205A1D067C680063ABDD /* YRDServiceChangable.h */,
-				E57C205B1D067C680063ABDD /* YRDServiceChangable.m */,
+				E571E2BF1D5833F700918EF1 /* ApiServices */,
+				E571E2B61D58307E00918EF1 /* ApiManager */,
+				E571E2B71D58307E00918EF1 /* Controller */,
+				E571E2B81D58307E00918EF1 /* Model */,
+			);
+			path = Restful;
+			sourceTree = "<group>";
+		};
+		E571E2B61D58307E00918EF1 /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				E571E2BC1D58325200918EF1 /* YBGRestfulGetApiManager.h */,
+				E571E2BD1D58325200918EF1 /* YBGRestfulGetApiManager.m */,
+				E571E2C31D583A4800918EF1 /* YBGRestfulPostApiManager.h */,
+				E571E2C41D583A4800918EF1 /* YBGRestfulPostApiManager.m */,
+				E571E2C61D5888C300918EF1 /* YBGRestfulPutApiManager.h */,
+				E571E2C71D5888C300918EF1 /* YBGRestfulPutApiManager.m */,
+				E571E2C91D5888D500918EF1 /* YBGRestfulDeleteApiManager.h */,
+				E571E2CA1D5888D500918EF1 /* YBGRestfulDeleteApiManager.m */,
+			);
+			path = ApiManager;
+			sourceTree = "<group>";
+		};
+		E571E2B71D58307E00918EF1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E571E2B91D58309600918EF1 /* YBGRestfulViewController.h */,
+				E571E2BA1D58309600918EF1 /* YBGRestfulViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E571E2B81D58307E00918EF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E571E2BF1D5833F700918EF1 /* ApiServices */ = {
+			isa = PBXGroup;
+			children = (
+				E571E2C01D58342500918EF1 /* YBGRestfulTestService.h */,
+				E571E2C11D58342500918EF1 /* YBGRestfulTestService.m */,
+			);
+			path = ApiServices;
+			sourceTree = "<group>";
+		};
+		E571E2DA1D58917100918EF1 /* GlobalHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				E571E2DB1D58917100918EF1 /* CustomServices */,
+			);
+			path = GlobalHelpers;
+			sourceTree = "<group>";
+		};
+		E571E2DB1D58917100918EF1 /* CustomServices */ = {
+			isa = PBXGroup;
+			children = (
+				E571E2DC1D58917100918EF1 /* ChangableService */,
+				E571E2DF1D58917100918EF1 /* WeatherService */,
+				E571E2E21D58917100918EF1 /* YBGService */,
+			);
+			path = CustomServices;
+			sourceTree = "<group>";
+		};
+		E571E2DC1D58917100918EF1 /* ChangableService */ = {
+			isa = PBXGroup;
+			children = (
+				E571E2DD1D58917100918EF1 /* YRDServiceChangable.h */,
+				E571E2DE1D58917100918EF1 /* YRDServiceChangable.m */,
 			);
 			path = ChangableService;
+			sourceTree = "<group>";
+		};
+		E571E2DF1D58917100918EF1 /* WeatherService */ = {
+			isa = PBXGroup;
+			children = (
+				E571E2E01D58917100918EF1 /* WeatherService.h */,
+				E571E2E11D58917100918EF1 /* WeatherService.m */,
+			);
+			path = WeatherService;
+			sourceTree = "<group>";
+		};
+		E571E2E21D58917100918EF1 /* YBGService */ = {
+			isa = PBXGroup;
+			children = (
+				E571E2E31D58917100918EF1 /* YRDServiceYiBaoGao.h */,
+				E571E2E41D58917100918EF1 /* YRDServiceYiBaoGao.m */,
+			);
+			path = YBGService;
 			sourceTree = "<group>";
 		};
 		E57C205D1D06CB1F0063ABDD /* General */ = {
@@ -996,7 +1103,6 @@
 			children = (
 				E5DA70181D01594A008E9724 /* AppContext */,
 				E5DA701B1D01594A008E9724 /* Configurations */,
-				E5DA701F1D01594A008E9724 /* CustomServices */,
 			);
 			path = YRDNetWorkingCustoms;
 			sourceTree = "<group>";
@@ -1018,34 +1124,6 @@
 				E5DA701E1D01594A008E9724 /* YRDNetworkingConfiguration.h */,
 			);
 			path = Configurations;
-			sourceTree = "<group>";
-		};
-		E5DA701F1D01594A008E9724 /* CustomServices */ = {
-			isa = PBXGroup;
-			children = (
-				E57C20591D067C430063ABDD /* ChangableService */,
-				E5DA70201D01594A008E9724 /* WeatherService */,
-				E5DA70231D01594A008E9724 /* YBGService */,
-			);
-			path = CustomServices;
-			sourceTree = "<group>";
-		};
-		E5DA70201D01594A008E9724 /* WeatherService */ = {
-			isa = PBXGroup;
-			children = (
-				E5DA70211D01594A008E9724 /* WeatherService.h */,
-				E5DA70221D01594A008E9724 /* WeatherService.m */,
-			);
-			path = WeatherService;
-			sourceTree = "<group>";
-		};
-		E5DA70231D01594A008E9724 /* YBGService */ = {
-			isa = PBXGroup;
-			children = (
-				E5DA70241D01594A008E9724 /* YRDServiceYiBaoGao.h */,
-				E5DA70251D01594A008E9724 /* YRDServiceYiBaoGao.m */,
-			);
-			path = YBGService;
 			sourceTree = "<group>";
 		};
 		E5DA702A1D017396008E9724 /* LocationManager */ = {
@@ -1186,11 +1264,13 @@
 				E57E500F1D40D1B500675B61 /* SDHomeSubjectsViewModel.m in Sources */,
 				E598ACA01CF2B36700294141 /* YRDCache.m in Sources */,
 				E513E6C81D49B646000B0809 /* FDFeedEntity.m in Sources */,
-				E5DA70291D01594A008E9724 /* YRDServiceYiBaoGao.m in Sources */,
 				E59C31191D3F7030006F4E63 /* MediatorViewController.m in Sources */,
 				E57E50071D40D18300675B61 /* SDBannerView.m in Sources */,
+				E571E2BB1D58309600918EF1 /* YBGRestfulViewController.m in Sources */,
 				E59C31151D3F6DAA006F4E63 /* YBGMediator+YBGMediatorModuleDefaultActions.m in Sources */,
 				E598AC721CEEFBF200294141 /* NSArray+YRDNetworkingMethods.m in Sources */,
+				E571E2C21D58342500918EF1 /* YBGRestfulTestService.m in Sources */,
+				E571E2BE1D58325200918EF1 /* YBGRestfulGetApiManager.m in Sources */,
 				E598AC8F1CF2A7DB00294141 /* YRDServiceFactory.m in Sources */,
 				E5DA70131D015836008E9724 /* YRDCommonParamsGenerator.m in Sources */,
 				E59C310E1D3F6D20006F4E63 /* YBGMediatorErrorViewController.m in Sources */,
@@ -1200,11 +1280,11 @@
 				E5340B471C96B0B400205879 /* Dog.m in Sources */,
 				E59C311F1D3F71D0006F4E63 /* YBGTarget_A.m in Sources */,
 				E57E50151D4117FB00675B61 /* YBGHomeViewController.m in Sources */,
-				E57C205C1D067C680063ABDD /* YRDServiceChangable.m in Sources */,
 				E5DA70271D01594A008E9724 /* YRDLoggerConfiguration.m in Sources */,
 				E5340B341C969E9900205879 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				E5DA70141D015836008E9724 /* YRDRequestGenerator.m in Sources */,
 				E598ACCD1CF4069B00294141 /* WeatherViewController.m in Sources */,
+				E571E2E51D58917100918EF1 /* YRDServiceChangable.m in Sources */,
 				E5340B4B1C970F1500205879 /* AFAppDotNetAPIClient.m in Sources */,
 				E598ACCA1CF405E100294141 /* WeatherApiManager.m in Sources */,
 				E513E6BF1D4992FE000B0809 /* YBGInheritViewController.m in Sources */,
@@ -1220,8 +1300,8 @@
 				E57E50191D411FE000675B61 /* YBGHomeListReformer.m in Sources */,
 				E57C84B01D19353A00311A06 /* RealmDog.m in Sources */,
 				E598AC751CEEFF3000294141 /* NSString+YRDNetworkingMethods.m in Sources */,
-				E5DA70281D01594A008E9724 /* WeatherService.m in Sources */,
 				E5DA70051D0157B4008E9724 /* YRDApiProxy.m in Sources */,
+				E571E2E71D58917100918EF1 /* YRDServiceYiBaoGao.m in Sources */,
 				E5340B411C96AA0500205879 /* User.m in Sources */,
 				E598AC8C1CF2A5D900294141 /* YRDService.m in Sources */,
 				E598AC7B1CEF07C800294141 /* NSURLRequest+YRDNetworkingMethods.m in Sources */,
@@ -1233,6 +1313,8 @@
 				E598AC6F1CEEFB0E00294141 /* NSObject+YRDNetworkingMethods.m in Sources */,
 				E57E4FF01D40C5C600675B61 /* YBGBaseDataController.m in Sources */,
 				E559C52C1D001B7B00E118E4 /* HTTPPostTableViewController.m in Sources */,
+				E571E2C51D583A4800918EF1 /* YBGRestfulPostApiManager.m in Sources */,
+				E571E2C81D5888C300918EF1 /* YBGRestfulPutApiManager.m in Sources */,
 				E513E6C71D49B646000B0809 /* FDFeedCell.m in Sources */,
 				E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */,
 				E538E2EF1D52D8CF007EB5C3 /* YBGAOPViewControllerInterceptor.m in Sources */,
@@ -1255,7 +1337,9 @@
 				E57E50121D40D22300675B61 /* YBGHomeDataController.m in Sources */,
 				E598AC7E1CEF084400294141 /* UIDevice+IdentifierAddition.m in Sources */,
 				E57E50081D40D18300675B61 /* SDPersonalInfoView.m in Sources */,
+				E571E2CB1D5888D500918EF1 /* YBGRestfulDeleteApiManager.m in Sources */,
 				E57E4FF31D40C5D900675B61 /* YBGBaseViewModel.m in Sources */,
+				E571E2E61D58917100918EF1 /* WeatherService.m in Sources */,
 				E5DA70151D015836008E9724 /* YRDSignatureGenerator.m in Sources */,
 				E5435DA21D49DB140021493F /* YBGViewControllerIntercepter.m in Sources */,
 				E58D74691D46FFD6002D1120 /* YBGTimeUtil.m in Sources */,

@@ -171,6 +171,14 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
                         YRDCallAPI(RestfulPOST, requestId);
                         break;
                     }
+                    case YRDAPIManagerRequestTypeRestPut: {
+                        YRDCallAPI(RestfulPUT, requestId);
+                        break;
+                    }
+                    case YRDAPIManagerRequestTypeRestDelete: {
+                        YRDCallAPI(RestfulDELETE, requestId);
+                        break;
+                    }
                 }
                 
                 //发出请求之后 的请求参数

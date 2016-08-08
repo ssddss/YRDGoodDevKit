@@ -65,7 +65,18 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
     NSNumber *requestId = [self callApiWithRequest:request success:success fail:fail];
     return [requestId integerValue];
 }
-
+- (NSInteger)callRestfulPUTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail
+{
+    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulPUTRequestWithServiceIdentifier:servieIdentifier requestParams:params methodName:methodName];
+    NSNumber *requestId = [self callApiWithRequest:request success:success fail:fail];
+    return [requestId integerValue];
+}
+- (NSInteger)callRestfulDELETEWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail
+{
+    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulDELETERequestWithServiceIdentifier:servieIdentifier requestParams:params methodName:methodName];
+    NSNumber *requestId = [self callApiWithRequest:request success:success fail:fail];
+    return [requestId integerValue];
+}
 - (void)cancelRequestWithRequestID:(NSNumber *)requestID
 {
     NSURLSessionDataTask *task = self.dispatchTable[requestID];

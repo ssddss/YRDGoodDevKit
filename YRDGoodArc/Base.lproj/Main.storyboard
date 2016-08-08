@@ -161,6 +161,13 @@
                                     <segue destination="de2-LG-cXU" kind="show" id="ILx-PD-8zS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNU-3S-ua8">
+                                <rect key="frame" x="173" y="330" width="48" height="30"/>
+                                <state key="normal" title="Restful"/>
+                                <connections>
+                                    <segue destination="cU2-qT-Vml" kind="show" id="zB9-zh-Smw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -251,6 +258,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJD-2l-Sbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2553" y="-331"/>
+        </scene>
+        <!--Restful View Controller-->
+        <scene sceneID="xhs-AS-agP">
+            <objects>
+                <viewController id="cU2-qT-Vml" customClass="YBGRestfulViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SUy-TY-7Cr"/>
+                        <viewControllerLayoutGuide type="bottom" id="iMV-Zx-jnx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bLO-9w-AkC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJi-C6-zIK">
+                                <rect key="frame" x="41" y="86" width="30" height="30"/>
+                                <state key="normal" title="get"/>
+                                <connections>
+                                    <action selector="getAction:" destination="cU2-qT-Vml" eventType="touchUpInside" id="ufb-Dz-BSH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcU-U3-4oh">
+                                <rect key="frame" x="41" y="132" width="31" height="30"/>
+                                <state key="normal" title="post"/>
+                                <connections>
+                                    <action selector="postAction:" destination="cU2-qT-Vml" eventType="touchUpInside" id="5I7-dD-9bW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znb-5t-a5E">
+                                <rect key="frame" x="41" y="185" width="30" height="30"/>
+                                <state key="normal" title="put"/>
+                                <connections>
+                                    <action selector="putAction:" destination="cU2-qT-Vml" eventType="touchUpInside" id="yFs-tk-fRV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnK-e5-bYR">
+                                <rect key="frame" x="36" y="232" width="43" height="30"/>
+                                <state key="normal" title="delete"/>
+                                <connections>
+                                    <action selector="deleteAction:" destination="cU2-qT-Vml" eventType="touchUpInside" id="eQB-oY-UCs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6w-aa-bpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3205" y="-331"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="qSP-q6-p31">

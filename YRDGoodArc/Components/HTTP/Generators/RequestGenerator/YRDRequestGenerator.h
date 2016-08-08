@@ -50,5 +50,24 @@
  *  @return <#return value description#>
  */
 - (NSURLRequest *)generateRestfulPOSTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName;
-
+/**
+ *  Restful Put请求
+ *
+ *  @param serviceIdentifier <#serviceIdentifier description#>
+ *  @param requestParams     <#requestParams description#>
+ *  @param methodName        <#methodName description#>
+ *
+ *  @return <#return value description#>
+ */
+- (NSURLRequest *)generateRestfulPUTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName;
+/**
+ *  Restful Delete请求
+ *
+ *  @param serviceIdentifier <#serviceIdentifier description#>
+ *  @param requestParams     <#requestParams description#>
+ *  @param methodName        <#methodName description#>
+ *
+ *  @return <#return value description#>
+ */
+- (NSURLRequest *)generateRestfulDELETERequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName;
 @end

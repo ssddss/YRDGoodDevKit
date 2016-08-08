@@ -57,7 +57,7 @@
     return @"mobileapi/service/common/schools";
 }
 - (NSString *)serviceType {
-    return kYRDServiceYibaogao;
+    return @"YRDServiceYiBaoGao";
 }
 - (YRDAPIManagerRequestType)requestType {
     return YRDAPIManagerRequestTypePost;

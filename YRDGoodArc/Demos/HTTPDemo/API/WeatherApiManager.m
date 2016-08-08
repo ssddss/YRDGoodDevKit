@@ -58,7 +58,7 @@
     return @"weather/index";
 }
 - (NSString *)serviceType {
-    return kYRDServiceWeather;
+    return @"WeatherService";
 }
 - (YRDAPIManagerRequestType)requestType {
     return YRDAPIManagerRequestTypeGet;
