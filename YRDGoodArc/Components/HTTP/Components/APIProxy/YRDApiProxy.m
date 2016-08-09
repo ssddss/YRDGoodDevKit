@@ -79,8 +79,10 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
 }
 - (void)cancelRequestWithRequestID:(NSNumber *)requestID
 {
-    NSURLSessionDataTask *task = self.dispatchTable[requestID];
+    NSURLSessionTask *task = self.dispatchTable[requestID];
+
     [task cancel];
+
     [self.dispatchTable removeObjectForKey:requestID];
 }
 
@@ -142,7 +144,33 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
     return requestId;
 
 }
+- (NSInteger)downloadTaskWithRequest:(NSURLRequest *)request
+                            progress:(void (^)(NSProgress *downloadProgress)) downloadProgressBlock
+                         destination:(NSURL * (^)(NSURL *targetPath, NSURLResponse *response))destination
+                   completionHandler:(void (^)(NSURLResponse *response, NSURL *filePath, NSError *error))completionHandler {
+      NSLog(@"\n==================================\n\nDownloadRequest Start: \n\n %@\n\n==================================", request.URL);
+    __block NSURLSessionDownloadTask *downLoadTask = nil;
+    downLoadTask = [self.sessionManager downloadTaskWithRequest:request progress:downloadProgressBlock destination:destination completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        NSNumber *requestID = @([downLoadTask taskIdentifier]);
+        
+        NSURLSessionDownloadTask *storedTask = self.dispatchTable[requestID];
+        if (storedTask == nil) {
+            // 如果这个operation是被cancel的，那就不用处理回调了。
+            NSLog(@"\n==================================\n\nDownloadRequest Cancel: \n\n %@\n\n==================================", request.URL);
+            
+            return;
+        }else{
+            [self.dispatchTable removeObjectForKey:requestID];
+        }
+        completionHandler(response,filePath,error);
 
+    }];
+    
+    NSNumber *requestId = @([downLoadTask taskIdentifier]);
+    self.dispatchTable[requestId] = downLoadTask;
+    [downLoadTask resume];
+    return  [requestId integerValue];
+}
 /**
  *  原来用来生成请求id的，现在用dataTask的taskId
  *

@@ -299,9 +299,47 @@
                                     <action selector="deleteAction:" destination="cU2-qT-Vml" eventType="touchUpInside" id="eQB-oY-UCs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tus-x2-0y8">
+                                <rect key="frame" x="24" y="280" width="67" height="30"/>
+                                <state key="normal" title="download"/>
+                                <connections>
+                                    <action selector="downLoadAction:" destination="cU2-qT-Vml" eventType="touchUpInside" id="mvu-FZ-vyo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPj-Q6-X3n">
+                                <rect key="frame" x="33" y="338" width="47" height="30"/>
+                                <state key="normal" title="upload"/>
+                                <connections>
+                                    <action selector="uploadAction:" destination="cU2-qT-Vml" eventType="touchUpInside" id="bTb-3r-LZf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aau-xw-3RT">
+                                <rect key="frame" x="103" y="280" width="62" height="30"/>
+                                <state key="normal" title="CancelDl"/>
+                                <connections>
+                                    <action selector="cancelDownLoadAction:" destination="cU2-qT-Vml" eventType="touchUpInside" id="ja5-eW-Ct6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eS-5d-Uly">
+                                <rect key="frame" x="99" y="338" width="71" height="30"/>
+                                <state key="normal" title="CancelUpl"/>
+                                <connections>
+                                    <action selector="cancelUploadAction:" destination="cU2-qT-Vml" eventType="touchUpInside" id="AfF-jH-9q0"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hIG-pI-Woc">
+                                <rect key="frame" x="173" y="294" width="156" height="2"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kTH-IH-mZ1">
+                                <rect key="frame" x="173" y="352" width="156" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="downLoadProgress" destination="hIG-pI-Woc" id="pHr-fy-6zG"/>
+                        <outlet property="uploadProgress" destination="kTH-IH-mZ1" id="qb5-F8-dnC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6w-aa-bpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -268,6 +268,20 @@ typedef void(^YRDRequestCompletionBlock)(YRDAPIBaseManager *manager);
 */
 - (NSInteger)startWithCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success
                                     failure:(YRDRequestCompletionBlock)failure;
+/**
+ *  执行下载文件操作，接口参数和AFNetworking里的一样，要取消的时候直接cancelAllRequest就好
+ *
+ *  @param request               <#request description#>
+ *  @param downloadProgressBlock <#downloadProgressBlock description#>
+ *  @param destination           <#destination description#>
+ *  @param completionHandler     <#completionHandler description#>
+ *
+ *  @return <#return value description#>
+ */
+- (NSInteger)startDownloadTaskWithRequest:(NSURLRequest *)request
+                            progress:(void (^)(NSProgress *downloadProgress))downloadProgressBlock
+                         destination:(NSURL * (^)(NSURL *targetPath, NSURLResponse *response))destination
+                   completionHandler:(void (^)(NSURLResponse *response, NSURL *filePath, NSError *error))completionHandler;
 //设置block
 - (void)setCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success
                               failure:(YRDRequestCompletionBlock)failure;

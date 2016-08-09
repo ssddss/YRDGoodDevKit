@@ -45,6 +45,7 @@
 		E571E2E51D58917100918EF1 /* YRDServiceChangable.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2DE1D58917100918EF1 /* YRDServiceChangable.m */; };
 		E571E2E61D58917100918EF1 /* WeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2E11D58917100918EF1 /* WeatherService.m */; };
 		E571E2E71D58917100918EF1 /* YRDServiceYiBaoGao.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2E41D58917100918EF1 /* YRDServiceYiBaoGao.m */; };
+		E571E2EA1D597C8D00918EF1 /* YBGDownloadApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2E91D597C8D00918EF1 /* YBGDownloadApiManager.m */; };
 		E57C84AD1D1933FF00311A06 /* RealmDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C84AC1D1933FF00311A06 /* RealmDemoViewController.m */; };
 		E57C84B01D19353A00311A06 /* RealmDog.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C84AF1D19353A00311A06 /* RealmDog.m */; };
 		E57C84B31D1938BE00311A06 /* RealmBook.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C84B21D1938BE00311A06 /* RealmBook.m */; };
@@ -174,6 +175,8 @@
 		E571E2E11D58917100918EF1 /* WeatherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherService.m; sourceTree = "<group>"; };
 		E571E2E31D58917100918EF1 /* YRDServiceYiBaoGao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDServiceYiBaoGao.h; sourceTree = "<group>"; };
 		E571E2E41D58917100918EF1 /* YRDServiceYiBaoGao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDServiceYiBaoGao.m; sourceTree = "<group>"; };
+		E571E2E81D597C8D00918EF1 /* YBGDownloadApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGDownloadApiManager.h; sourceTree = "<group>"; };
+		E571E2E91D597C8D00918EF1 /* YBGDownloadApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGDownloadApiManager.m; sourceTree = "<group>"; };
 		E57C205F1D06CB1F0063ABDD /* MethodsMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodsMacro.h; sourceTree = "<group>"; };
 		E57C20601D06CB1F0063ABDD /* YRDGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDGeneral.h; sourceTree = "<group>"; };
 		E57C84AB1D1933FF00311A06 /* RealmDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmDemoViewController.h; sourceTree = "<group>"; };
@@ -547,6 +550,8 @@
 				E571E2C71D5888C300918EF1 /* YBGRestfulPutApiManager.m */,
 				E571E2C91D5888D500918EF1 /* YBGRestfulDeleteApiManager.h */,
 				E571E2CA1D5888D500918EF1 /* YBGRestfulDeleteApiManager.m */,
+				E571E2E81D597C8D00918EF1 /* YBGDownloadApiManager.h */,
+				E571E2E91D597C8D00918EF1 /* YBGDownloadApiManager.m */,
 			);
 			path = ApiManager;
 			sourceTree = "<group>";
@@ -1293,6 +1298,7 @@
 				E598AC781CEF011700294141 /* NSMutableString+YRDNetworkingMethods.m in Sources */,
 				E57E50001D40D13D00675B61 /* SDSubject.m in Sources */,
 				E5DA70041D0157B4008E9724 /* YRDAPIBaseManager.m in Sources */,
+				E571E2EA1D597C8D00918EF1 /* YBGDownloadApiManager.m in Sources */,
 				E59C31121D3F6D63006F4E63 /* YBGTarget_Default.m in Sources */,
 				E57C84AD1D1933FF00311A06 /* RealmDemoViewController.m in Sources */,
 				E5DA70161D015836008E9724 /* YRDUDIDGenerator.m in Sources */,

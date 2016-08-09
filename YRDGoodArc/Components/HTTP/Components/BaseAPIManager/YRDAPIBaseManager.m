@@ -93,7 +93,41 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
     return resultData;
 }
 #pragma mark - calling API
+- (NSInteger)startDownloadTaskWithRequest:(NSURLRequest *)request progress:(void (^)(NSProgress *))downloadProgressBlock destination:(NSURL *(^)(NSURL *, NSURLResponse *))destination completionHandler:(void (^)(NSURLResponse *, NSURL * _Nullable, NSError * _Nullable))completionHandler {
+    
+    //如果有请求了，取消之前的请求,或者取消当前请求
 
+    if ([self.child respondsToSelector:@selector(shouldRefreshLoadingRequest)]) {
+        if ([self.child shouldRefreshLoadingRequest]) {
+            if (self.requestIdList.count) {
+                //                如果正在请求取消之前的请求，重新请求
+                [self cancelAllRequests];
+            }
+        }
+        else {
+            if (self.requestIdList.count) {
+                //  如果正在请求取消当前请求
+                return 0;
+            }
+        }
+    }
+    else {
+        if (self.requestIdList.count) {
+            //  如果正在请求取消当前请求
+            return 0;
+        }
+    }
+    __weak typeof(&*self) weakSelf = self;
+     NSInteger requestId = [[YRDApiProxy sharedInstance]downloadTaskWithRequest:request progress:downloadProgressBlock destination:destination completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+         __strong typeof(&*weakSelf) strongSelf = weakSelf;
+         [strongSelf.requestIdList removeAllObjects];
+         completionHandler(response,filePath,error);
+
+     }];
+    [self.requestIdList addObject:@(requestId)];                                          \
+
+    return requestId;
+}
 - (NSInteger)startWithCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success failure:(YRDRequestCompletionBlock)failure {
    
     if ([self.child respondsToSelector:@selector(shouldRefreshLoadingRequest)]) {
