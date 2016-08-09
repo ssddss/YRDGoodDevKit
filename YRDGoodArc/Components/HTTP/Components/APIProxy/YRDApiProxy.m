@@ -150,7 +150,10 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
                    completionHandler:(void (^)(NSURLResponse *response, NSURL *filePath, NSError *error))completionHandler {
       NSLog(@"\n==================================\n\nDownloadRequest Start: \n\n %@\n\n==================================", request.URL);
     __block NSURLSessionDownloadTask *downLoadTask = nil;
-    downLoadTask = [self.sessionManager downloadTaskWithRequest:request progress:downloadProgressBlock destination:destination completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+    downLoadTask = [self.sessionManager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"正在下载requestPath:%@ :%lld/%lld",request.URL.absoluteString,downloadProgress.completedUnitCount,downloadProgress.totalUnitCount);
+        downloadProgressBlock(downloadProgress);
+    } destination:destination completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         NSNumber *requestID = @([downLoadTask taskIdentifier]);
         
         NSURLSessionDownloadTask *storedTask = self.dispatchTable[requestID];
@@ -162,6 +165,8 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
         }else{
             [self.dispatchTable removeObjectForKey:requestID];
         }
+        NSLog(@"\n==================================\n\nDownloadRequest Finish: \n\n %@\n\n==================================", request.URL);
+
         completionHandler(response,filePath,error);
 
     }];

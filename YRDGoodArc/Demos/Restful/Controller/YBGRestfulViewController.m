@@ -85,7 +85,7 @@
     NSString *samllFile = @"http://192.168.151.107:8080/mobileapi/open/test/download?fileName=1.png";
     NSString *bigFile = @"http://192.168.151.107:8080/mobileapi/open/test/download?fileName=sqldeveloper.zip";
     NSString *middleFile = @"http://192.168.151.107:8080/mobileapi/open/test/download?fileName=Xshell5.exe";
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:middleFile]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:samllFile]];
     @weakify(self);
     [self.downloadApiManager startDownloadTaskWithRequest:request progress:^(NSProgress *downloadProgress) {
         @strongify(self);
