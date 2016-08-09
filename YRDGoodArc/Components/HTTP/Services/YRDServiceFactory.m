@@ -10,8 +10,6 @@
 #import "YRDNetworkingConfiguration.h"
 
 
-NSString * const kYRDServiceYibaogao = @"YiBaoGao";
-NSString *const kYRDServiceWeather = @"weather";
 NSString *const kYRDServiceChangable = @"ChangableServiceUrl";
 @interface YRDServiceFactory()
     

@@ -31,10 +31,6 @@ static BOOL kYRDShouldCache = NO;/**< 是否要缓存请求*/
 static NSTimeInterval kYRDCacheOutdateTimeSeconds = 300; // 5分钟的cache过期时间
 static NSUInteger kYRDCacheCountLimit = 1000; // 最多1000条cache
 
-// Yigaobao
-extern NSString * const kYRDServiceYibaogao;
-//天气，测试用
-extern NSString *const kYRDServiceWeather;
 
 extern NSString *const kYRDServiceChangable;/**< 自定义保存的可变service,用于可以选择改变的服务器,使用NSUserDefault保存这个值*/
 
