@@ -15,7 +15,7 @@
             self.channelID = [YRDAppContext sharedInstance].channelID;
             self.appKey = @"YBG";
             self.logAppName = [YRDAppContext sharedInstance].appName;
-            self.serviceType = kYRDServiceYibaogao;
+//            self.serviceType = kYRDServiceYibaogao;
             self.sendLogMethod = @"admin.writeAppLog";
             self.sendActionMethod = @"admin.recordaction";
             self.sendLogKey = @"data";
