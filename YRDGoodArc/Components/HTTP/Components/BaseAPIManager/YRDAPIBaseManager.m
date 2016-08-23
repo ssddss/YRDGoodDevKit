@@ -93,32 +93,19 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
     return resultData;
 }
 #pragma mark - calling API
-- (NSInteger)startDownloadTaskWithRequest:(NSURLRequest *)request progress:(void (^)(NSProgress *))downloadProgressBlock destination:(NSURL *(^)(NSURL *, NSURLResponse *))destination completionHandler:(void (^)(NSURLResponse *, NSURL * _Nullable, NSError * _Nullable))completionHandler {
+- (NSInteger)startDownloadTaskWithRequest:(NSString *)requestURL progress:(void (^)(NSProgress *))downloadProgressBlock destination:(NSURL *(^)(NSURL *, NSURLResponse *))destination completionHandler:(void (^)(NSURLResponse *, NSURL * _Nullable, NSError * _Nullable))completionHandler {
     
     //如果有请求了，取消之前的请求,或者取消当前请求
 
-    if ([self.child respondsToSelector:@selector(shouldRefreshLoadingRequest)]) {
-        if ([self.child shouldRefreshLoadingRequest]) {
-            if (self.requestIdList.count) {
-                //                如果正在请求取消之前的请求，重新请求
-                [self cancelAllRequests];
-            }
-        }
-        else {
-            if (self.requestIdList.count) {
-                //  如果正在请求取消当前请求
-                return 0;
-            }
-        }
+    if (![self shouldRequestContinue]) {
+        return 0;
     }
-    else {
-        if (self.requestIdList.count) {
-            //  如果正在请求取消当前请求
-            return 0;
-        }
+    //没有长度的话就return掉了
+    if (![requestURL isKindOfClass:[NSString class]] || requestURL.length == 0) {
+        return 0;
     }
     __weak typeof(&*self) weakSelf = self;
-     NSInteger requestId = [[YRDApiProxy sharedInstance]downloadTaskWithRequest:request progress:downloadProgressBlock destination:destination completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+     NSInteger requestId = [[YRDApiProxy sharedInstance]downloadTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]] progress:downloadProgressBlock destination:destination completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
          __strong typeof(&*weakSelf) strongSelf = weakSelf;
          [strongSelf.requestIdList removeAllObjects];
          completionHandler(response,filePath,error);
@@ -128,32 +115,78 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
 
     return requestId;
 }
+
+- (NSInteger)startUploadTaskWithRequest:(NSString *)requestURL params:(NSDictionary *)params files:(NSArray<YRDUpLoadFileObject *> *)files progress:(void (^)(NSProgress *))uploadProgress success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
+    //如果有请求了，取消之前的请求,或者取消当前请求
+    
+    if (![self shouldRequestContinue]) {
+        return 0;
+    }
+    //没有长度的话就return掉了
+    if (![requestURL isKindOfClass:[NSString class]] || requestURL.length == 0) {
+        return 0;
+    }
+    __weak typeof(&*self) weakSelf = self;
+
+    NSInteger requestId = [[YRDApiProxy sharedInstance]uploadTaskWithRequest:requestURL parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        for (YRDUpLoadFileObject *fileObject in files) {
+            [formData appendPartWithFileData:fileObject.fileData name:fileObject.fileUploadKey fileName:fileObject.fileName mimeType:[fileObject getMemeTypeStr]];
+
+        }
+    } progress:uploadProgress success:^(NSURLSessionDataTask *task, id responseObject) {
+        __strong typeof(&*weakSelf) strongSelf = weakSelf;
+        [strongSelf.requestIdList removeAllObjects];
+        
+        success(task,responseObject);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        __strong typeof(&*weakSelf) strongSelf = weakSelf;
+        [strongSelf.requestIdList removeAllObjects];
+        
+        failure(task,error);
+    }];
+    
+    [self.requestIdList addObject:@(requestId)];                                          \
+    return requestId;
+}
 - (NSInteger)startWithCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success failure:(YRDRequestCompletionBlock)failure {
    
+    if (![self shouldRequestContinue]) {
+        return 0;
+    }
+   
+    
+    [self setCompletionBlockWithSuccess:success failure:failure];
+    return [self loadData];
+}
+/**
+ *  检查请求是否可以继续执行
+ *
+ *  @return
+ */
+- (BOOL)shouldRequestContinue {
     if ([self.child respondsToSelector:@selector(shouldRefreshLoadingRequest)]) {
         if ([self.child shouldRefreshLoadingRequest]) {
             if (self.isLoading) {
-//                如果正在请求取消之前的请求，重新请求
+                //                如果正在请求取消之前的请求，重新请求
                 [self cancelAllRequests];
             }
         }
         else {
             if (self.isLoading) {
                 //  如果正在请求取消当前请求
-                return 0;
+                return NO;
             }
         }
     }
     else {
         if (self.isLoading) {
             //  如果正在请求取消当前请求
-            return 0;
+            return NO;
         }
     }
-   
-    
-    [self setCompletionBlockWithSuccess:success failure:failure];
-    return [self loadData];
+    return YES;
+
 }
 - (void)setCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success
                               failure:(YRDRequestCompletionBlock)failure {

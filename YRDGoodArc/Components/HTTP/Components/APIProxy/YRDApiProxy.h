@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YRDURLResponse.h"
+#import "AFNetworking.h"
 
 typedef void(^YRDCallback)(YRDURLResponse *response);
 @interface YRDApiProxy : NSObject
@@ -37,5 +38,11 @@ typedef void(^YRDCallback)(YRDURLResponse *response);
                                           destination:( NSURL * (^)(NSURL *targetPath, NSURLResponse *response))destination
                                     completionHandler:( void (^)(NSURLResponse *response, NSURL * filePath, NSError * error))completionHandler;
 
+- (NSInteger)uploadTaskWithRequest:(NSString *)request
+                        parameters:(id)parameters
+         constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
+                          progress:(void (^)(NSProgress *progress))upProgress
+                           success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                           failure:(void (^)(NSURLSessionDataTask * task, NSError *error))failure;
 
 @end

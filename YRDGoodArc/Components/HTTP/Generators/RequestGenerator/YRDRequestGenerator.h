@@ -10,6 +10,13 @@
 
 @interface YRDRequestGenerator : NSObject
 + (instancetype)sharedInstance;
+
+/**
+ *  请求httpHeader的参数
+ *
+ *  @return
+ */
+- (NSDictionary *)requestHeaderTokenParams;
 /**
  *  普通get请求
  *

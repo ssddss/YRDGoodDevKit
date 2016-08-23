@@ -15,7 +15,7 @@ pod 'YYKit'
 pod 'Realm'
 pod 'HandyFrame'
 pod 'Aspects'
-
+pod 'CYLTabBarController'
 end
 
 

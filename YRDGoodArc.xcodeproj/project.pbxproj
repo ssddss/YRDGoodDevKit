@@ -36,6 +36,10 @@
 		E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C52E1D001C6E00E118E4 /* YiBaoGaoApiManager.m */; };
 		E559C5331D00217600E118E4 /* SchoolListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C5321D00217600E118E4 /* SchoolListReformer.m */; };
 		E559C5371D0022AD00E118E4 /* SchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C5361D0022AD00E118E4 /* SchoolItem.m */; };
+		E56369891D6AFF2500B9E83E /* YRDUpLoadFileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E56369881D6AFF2500B9E83E /* YRDUpLoadFileObject.m */; };
+		E563698C1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E563698B1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m */; };
+		E563698E1D6BE64600B9E83E /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = E563698D1D6BE64600B9E83E /* index.js */; };
+		E56369901D6BFA2200B9E83E /* Xshell5.exe in Resources */ = {isa = PBXBuildFile; fileRef = E563698F1D6BFA2200B9E83E /* Xshell5.exe */; };
 		E571E2BB1D58309600918EF1 /* YBGRestfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2BA1D58309600918EF1 /* YBGRestfulViewController.m */; };
 		E571E2BE1D58325200918EF1 /* YBGRestfulGetApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2BD1D58325200918EF1 /* YBGRestfulGetApiManager.m */; };
 		E571E2C21D58342500918EF1 /* YBGRestfulTestService.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2C11D58342500918EF1 /* YBGRestfulTestService.m */; };
@@ -157,6 +161,12 @@
 		E559C5321D00217600E118E4 /* SchoolListReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolListReformer.m; sourceTree = "<group>"; };
 		E559C5351D0022AD00E118E4 /* SchoolItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolItem.h; sourceTree = "<group>"; };
 		E559C5361D0022AD00E118E4 /* SchoolItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolItem.m; sourceTree = "<group>"; };
+		E56369871D6AFF2500B9E83E /* YRDUpLoadFileObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDUpLoadFileObject.h; sourceTree = "<group>"; };
+		E56369881D6AFF2500B9E83E /* YRDUpLoadFileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDUpLoadFileObject.m; sourceTree = "<group>"; };
+		E563698A1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulUploadApiManager.h; sourceTree = "<group>"; };
+		E563698B1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulUploadApiManager.m; sourceTree = "<group>"; };
+		E563698D1D6BE64600B9E83E /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		E563698F1D6BFA2200B9E83E /* Xshell5.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xshell5.exe; sourceTree = "<group>"; };
 		E571E2B91D58309600918EF1 /* YBGRestfulViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulViewController.h; sourceTree = "<group>"; };
 		E571E2BA1D58309600918EF1 /* YBGRestfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulViewController.m; sourceTree = "<group>"; };
 		E571E2BC1D58325200918EF1 /* YBGRestfulGetApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulGetApiManager.h; sourceTree = "<group>"; };
@@ -528,6 +538,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E56369861D6AFF0B00B9E83E /* UpLoadFileObject */ = {
+			isa = PBXGroup;
+			children = (
+				E56369871D6AFF2500B9E83E /* YRDUpLoadFileObject.h */,
+				E56369881D6AFF2500B9E83E /* YRDUpLoadFileObject.m */,
+			);
+			path = UpLoadFileObject;
+			sourceTree = "<group>";
+		};
 		E571E2B51D58307E00918EF1 /* Restful */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +571,8 @@
 				E571E2CA1D5888D500918EF1 /* YBGRestfulDeleteApiManager.m */,
 				E571E2E81D597C8D00918EF1 /* YBGDownloadApiManager.h */,
 				E571E2E91D597C8D00918EF1 /* YBGDownloadApiManager.m */,
+				E563698A1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.h */,
+				E563698B1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m */,
 			);
 			path = ApiManager;
 			sourceTree = "<group>";
@@ -568,6 +589,8 @@
 		E571E2B81D58307E00918EF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E563698F1D6BFA2200B9E83E /* Xshell5.exe */,
+				E563698D1D6BE64600B9E83E /* index.js */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -879,6 +902,7 @@
 		E598AC931CF2ADBE00294141 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E56369861D6AFF0B00B9E83E /* UpLoadFileObject */,
 				E5DA702A1D017396008E9724 /* LocationManager */,
 				E5DA6FFA1D0157B4008E9724 /* URLResponse */,
 				E5DA6FFD1D0157B4008E9724 /* BaseAPIManager */,
@@ -1202,9 +1226,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E56369901D6BFA2200B9E83E /* Xshell5.exe in Resources */,
 				E5340B1E1C9661AD00205879 /* LaunchScreen.storyboard in Resources */,
 				E5340B1B1C9661AD00205879 /* Assets.xcassets in Resources */,
 				E5340B191C9661AD00205879 /* Main.storyboard in Resources */,
+				E563698E1D6BE64600B9E83E /* index.js in Resources */,
 				E513E6CB1D49B655000B0809 /* data.json in Resources */,
 				E59C310F1D3F6D20006F4E63 /* YBGMediatorErrorViewController.xib in Resources */,
 			);
@@ -1297,6 +1323,7 @@
 				E57E4FF71D40CE9D00675B61 /* YBGBaseModel.m in Sources */,
 				E598AC781CEF011700294141 /* NSMutableString+YRDNetworkingMethods.m in Sources */,
 				E57E50001D40D13D00675B61 /* SDSubject.m in Sources */,
+				E563698C1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m in Sources */,
 				E5DA70041D0157B4008E9724 /* YRDAPIBaseManager.m in Sources */,
 				E571E2EA1D597C8D00918EF1 /* YBGDownloadApiManager.m in Sources */,
 				E59C31121D3F6D63006F4E63 /* YBGTarget_Default.m in Sources */,
@@ -1339,6 +1366,7 @@
 				E5340B3E1C96A72900205879 /* ViewController.m in Sources */,
 				E59C31091D3F6C84006F4E63 /* YBGMediator.m in Sources */,
 				E5DA702D1D017396008E9724 /* YRDLocationManager.m in Sources */,
+				E56369891D6AFF2500B9E83E /* YRDUpLoadFileObject.m in Sources */,
 				E5435DA91D49DE820021493F /* YBGAOPViewController.m in Sources */,
 				E57E50121D40D22300675B61 /* YBGHomeDataController.m in Sources */,
 				E598AC7E1CEF084400294141 /* UIDevice+IdentifierAddition.m in Sources */,

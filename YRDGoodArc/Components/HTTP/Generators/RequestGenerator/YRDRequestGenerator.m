@@ -81,6 +81,7 @@
     [restfulHeader enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [request setValue:obj forHTTPHeaderField:key];
     }];
+
     request.requestParams = requestParams;
     [YRDLogger logDebugInfoWithRequest:request apiName:methodName service:service requestParams:requestParams httpMethod:@"RESTful GET"];
     return request;
@@ -102,8 +103,10 @@
     NSString *urlString = [NSString stringWithFormat:@"%@/%@", service.apiBaseUrl, methodName];
 
     NSDictionary *restfulHeader = [self commRESTHeadersWithService:service signature:signature];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:kYRDNetworkingTimeoutSeconds];
-    request.HTTPMethod = @"POST";
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:kYRDNetworkingTimeoutSeconds];
+    NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:@"POST" URLString:urlString parameters:nil error:NULL];
+//    request.HTTPMethod = @"POST";
+    [request setTimeoutInterval:kYRDNetworkingTimeoutSeconds];
     [restfulHeader enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [request setValue:obj forHTTPHeaderField:key];
     }];
@@ -169,6 +172,10 @@
     [headerDic setValue:@"application/json" forKey:@"Content-Type"];
    
     return headerDic;
+}
+#pragma mark - public methods
+- (NSDictionary *)requestHeaderTokenParams {
+    return @{@"token":@"12345"};
 }
 #pragma mark - getters and setters
 - (AFHTTPRequestSerializer *)httpRequestSerializer {

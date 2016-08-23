@@ -14,4 +14,6 @@
 #import "YRDAppContext.h"
 #import "YRDAPIBaseManager.h"
 #import "YRDNetworkingConfiguration.h"
+#import "YRDUpLoadFileObject.h"
+
 #endif /* YRDNetworking_h */

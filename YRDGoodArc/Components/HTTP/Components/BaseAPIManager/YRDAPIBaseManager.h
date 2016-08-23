@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YRDURLResponse.h"
+#import "YRDUpLoadFileObject.h"
 
 @class YRDAPIBaseManager;
 
@@ -266,22 +267,44 @@ typedef void(^YRDRequestCompletionBlock)(YRDAPIBaseManager *manager);
     ...
 }];
 */
+/**
+ *  执行请求
+ *
+ *  @param success
+ *  @param failure
+ *
+ *  @return 当前请求的标志，可用来取消请求
+ */
 - (NSInteger)startWithCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success
                                     failure:(YRDRequestCompletionBlock)failure;
 /**
  *  执行下载文件操作，接口参数和AFNetworking里的一样，要取消的时候直接cancelAllRequest就好
  *
- *  @param request               <#request description#>
+ *  @param requestURL               <#request description#>
  *  @param downloadProgressBlock <#downloadProgressBlock description#>
  *  @param destination           <#destination description#>
  *  @param completionHandler     <#completionHandler description#>
  *
  *  @return <#return value description#>
  */
-- (NSInteger)startDownloadTaskWithRequest:(NSURLRequest *)request
+- (NSInteger)startDownloadTaskWithRequest:(NSString *)requestURL
                             progress:(void (^)(NSProgress *downloadProgress))downloadProgressBlock
                          destination:(NSURL * (^)(NSURL *targetPath, NSURLResponse *response))destination
                    completionHandler:(void (^)(NSURLResponse *response, NSURL *filePath, NSError *error))completionHandler;
+/**
+ *  上传文件
+ *
+ *  @param requestURL     地址
+ *  @param files          文件，先生成YRDUpLoadFileObject对象
+ *  @param uploadProgress 上传进度
+ *  @param success        成功回调
+ *  @param failure        失败回调
+ *
+ *  @return <#return value description#>
+ */
+- (NSInteger)startUploadTaskWithRequest:(NSString *)requestURL params:(NSDictionary *)params files:(NSArray<YRDUpLoadFileObject *> *)files progress:( void (^)(NSProgress * ))uploadProgress
+                                success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                                failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 //设置block
 - (void)setCompletionBlockWithSuccess:(YRDRequestCompletionBlock)success
                               failure:(YRDRequestCompletionBlock)failure;

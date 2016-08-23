@@ -12,7 +12,6 @@
 #import "YRDLogger.h"
 #import "NSURLRequest+YRDNetworkingMethods.h"
 #import "NSDictionary+YRDNetworkingMethods.h"
-#import "AFNetworking.h"
 
 static NSString * const kYRDApiProxyDispatchItemKeyCallbackSuccess = @"kYRDApiProxyDispatchItemCallbackSuccess";
 static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxyDispatchItemCallbackFail";
@@ -176,6 +175,96 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
     [downLoadTask resume];
     return  [requestId integerValue];
 }
+- (NSInteger)uploadTaskWithRequest:(NSString *)request parameters:(id)parameters constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block progress:(void (^)(NSProgress *))upProgress success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
+    NSLog(@"\n==================================\n\nUploadRequest Start: \n\n %@\n\n==================================", request);
+    
+    __block NSURLSessionDataTask *upLoadTask = nil;
+    upLoadTask = [self POST:request parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        block(formData);
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"正在上传");
+
+        upProgress(uploadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSNumber *requestID = @([upLoadTask taskIdentifier]);
+        
+        [self.dispatchTable removeObjectForKey:requestID];
+        
+        NSLog(@"\n==================================\n\nUploadRequest Finish: \n\n %@\n\n==================================", request);
+        id response = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:NULL];
+
+        success(task,response);
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSNumber *requestID = @([upLoadTask taskIdentifier]);
+        
+        NSURLSessionDownloadTask *storedTask = self.dispatchTable[requestID];
+        if (storedTask == nil) {
+            // 如果这个operation是被cancel的，那就不用处理回调了。
+            NSLog(@"\n==================================\n\nUploadRequest Cancel: \n\n %@\n\n==================================", request);
+            
+            return;
+        }else{
+            [self.dispatchTable removeObjectForKey:requestID];
+        }
+        
+        failure(task,error);
+
+    }];
+    
+    NSNumber *requestId = @([upLoadTask taskIdentifier]);
+    self.dispatchTable[requestId] = upLoadTask;
+    return  [requestId integerValue];
+
+}
+
+- (NSURLSessionDataTask *)POST:(NSString *)URLString
+                    parameters:(id)parameters
+     constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
+                      progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
+                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
+{
+    NSError *serializationError = nil;
+    
+    NSMutableURLRequest *request = [self.sessionManager.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:nil] absoluteString] parameters:parameters constructingBodyWithBlock:block error:&serializationError];
+    
+    //header参数，以后要往headerfields里填写参数才能访问接口
+    NSDictionary *httpHeaderFields = [[YRDRequestGenerator sharedInstance]requestHeaderTokenParams];
+    [httpHeaderFields enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [request setValue:obj forHTTPHeaderField:key];
+    }];
+    if (serializationError) {
+        if (failure) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+            dispatch_async(self.sessionManager.completionQueue ?: dispatch_get_main_queue(), ^{
+                failure(nil, serializationError);
+            });
+#pragma clang diagnostic pop
+        }
+        
+        return nil;
+    }
+    
+    __block NSURLSessionDataTask *task = [self.sessionManager uploadTaskWithStreamedRequest:request progress:uploadProgress completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (error) {
+            if (failure) {
+                failure(task, error);
+            }
+        } else {
+            if (success) {
+                success(task, responseObject);
+            }
+        }
+    }];
+    
+    [task resume];
+    
+    return task;
+}
+
 /**
  *  原来用来生成请求id的，现在用dataTask的taskId
  *

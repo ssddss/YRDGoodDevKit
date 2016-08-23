@@ -12,6 +12,9 @@
 #import "YBGRestfulPutApiManager.h"
 #import "YBGRestfulDeleteApiManager.h"
 #import "YBGDownloadApiManager.h"
+#import "YBGRestfulUploadApiManager.h"
+
+#import "AFNetworking.h"
 #define CacheFolderName @"DownloadFiles"
 
 @interface YBGRestfulViewController ()
@@ -19,6 +22,8 @@
 @property (nonatomic) YBGRestfulPostApiManager *postApiManager;
 @property (nonatomic) YBGRestfulPutApiManager *putApiManager;
 @property (nonatomic) YBGRestfulDeleteApiManager *deleteApiManager;
+
+@property (nonatomic) YBGRestfulUploadApiManager *uploadApiManager;
 @property (weak, nonatomic) IBOutlet UIProgressView *downLoadProgress;
 @property (weak, nonatomic) IBOutlet UIProgressView *uploadProgress;
 @property (nonatomic) YBGDownloadApiManager *downloadApiManager;
@@ -87,7 +92,7 @@
     NSString *middleFile = @"http://192.168.151.107:8080/mobileapi/open/test/download?fileName=Xshell5.exe";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:samllFile]];
     @weakify(self);
-    [self.downloadApiManager startDownloadTaskWithRequest:request progress:^(NSProgress *downloadProgress) {
+    [self.downloadApiManager startDownloadTaskWithRequest:samllFile progress:^(NSProgress *downloadProgress) {
         @strongify(self);
 //        得不到完整的大小这个block不会跑，但是还是在下载
         NSLog(@"progress: %lld/%lld",downloadProgress.completedUnitCount,downloadProgress.totalUnitCount);
@@ -136,8 +141,85 @@
     [self.downloadApiManager cancelAllRequests];
 }
 - (IBAction)uploadAction:(id)sender {
+    
+    NSString *urlString = @"http://192.168.151.107:8080/mobileapi/open/test/upload";
+
+    
+    YRDUpLoadFileObject *fileObect = [[YRDUpLoadFileObject alloc]init];
+    
+//    这种是根据文件生成data
+//    UIImage *iamge = [UIImage imageNamed:@"breaddoge"];
+//    NSData *data = UIImagePNGRepresentation(iamge);
+//    fileObect.fileData = data;
+//    fileObect.fileName = @"dog2.png";
+//    fileObect.fileUploadKey = @"file1";
+//    
+//    fileObect.fileMemeType = YRDUploadFileTypePNGImage;
+    //这种是根据文件地址生成data
+//    NSString *path = [[NSBundle mainBundle]pathForResource:@"index" ofType:@"js"];
+//
+//    fileObect.fileData = [NSData dataWithContentsOfFile:path];
+//        fileObect.fileName = @"index.js";
+    
+    NSString *path1 = [[NSBundle mainBundle]pathForResource:@"Xshell5" ofType:@"exe"];
+    fileObect.fileData = [NSData dataWithContentsOfFile:path1];
+    fileObect.fileName = @"Xshell5.exe";
+        fileObect.fileUploadKey = @"file1";
+    
+        fileObect.fileMemeType = YRDUploadFileTypeStream;
+    
+    [self.uploadApiManager startUploadTaskWithRequest:urlString params:@{@"name":@"ssdd"} files:@[fileObect] progress:^(NSProgress *uploadProgress) {
+        //打印下上传进度
+        NSLog(@"%lf",1.0 *uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSLog(@"请求成功：%@",responseObject);
+
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"请求失败：%@",error);
+
+    }];
+    
+    return;
+    
+    //1。创建管理者对象
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    //2.上传文件
+    NSDictionary *dict = @{@"name":@"dog"};
+    
+    
+//    NSString *urlString = @"http://staticonsae.sinaapp.com/pitaya.php";
+
+    [manager POST:urlString parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        //上传文件参数
+        UIImage *iamge = [UIImage imageNamed:@"breaddoge"];
+        NSData *data = UIImagePNGRepresentation(iamge);
+        
+        UIImage *iamge1 = [UIImage imageNamed:@"doge"];
+        NSData *data1 = UIImagePNGRepresentation(iamge1);
+        //这个就是参数
+        [formData appendPartWithFileData:data name:@"file1" fileName:@"breaddoge.png" mimeType:@"image/png"];
+        [formData appendPartWithFileData:data1 name:@"file2" fileName:@"dog.png" mimeType:@"image/png"];
+
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+        //打印下上传进度
+        NSLog(@"%lf",1.0 *uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //请求成功
+        NSLog(@"请求成功：%@",responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        //请求失败
+        NSLog(@"请求失败：%@",error);
+    }];
+
 }
 - (IBAction)cancelUploadAction:(id)sender {
+    [self.uploadApiManager cancelAllRequests];
 }
 #pragma mark - getters and setters
 - (YBGRestfulGetApiManager *)getApiManager {
@@ -169,6 +251,12 @@
         _downloadApiManager = [[YBGDownloadApiManager alloc]init];
     }
     return _downloadApiManager;
+}
+- (YBGRestfulUploadApiManager *)uploadApiManager {
+    if (!_uploadApiManager) {
+        _uploadApiManager = [[YBGRestfulUploadApiManager alloc]init];
+    }
+    return _uploadApiManager;
 }
 /*
 #pragma mark - Navigation
