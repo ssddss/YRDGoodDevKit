@@ -67,6 +67,11 @@
     [self.currentHUD hideAnimated:YES afterDelay:2.f];
 
 }
+//默认的barStytle
+- (UIStatusBarStyle)preferredStatusBarStyle {
+//    默认是黑色文字，如果app风格不一致就改另一种风格，
+    return UIStatusBarStyleDefault;
+}
 #pragma mark - private methods
 /**
  *  显示加载圈

@@ -424,6 +424,15 @@
                     <view key="view" contentMode="scaleToFill" id="ahq-FS-9G5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQl-73-dWZ">
+                                <rect key="frame" x="18" y="105" width="105" height="30"/>
+                                <state key="normal" title="改变状态栏颜色"/>
+                                <connections>
+                                    <action selector="changeStatusBarColor:" destination="H67-7Q-zC6" eventType="touchUpInside" id="ekM-Bl-irG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -434,7 +443,7 @@
         <!--Item-->
         <scene sceneID="2wX-KQ-qPE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="gD5-tB-E32" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="gD5-tB-E32" customClass="YBGNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="5Gj-jK-hfG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aIO-5J-q32">

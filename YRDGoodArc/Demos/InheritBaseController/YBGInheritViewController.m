@@ -9,7 +9,7 @@
 #import "YBGInheritViewController.h"
 
 @interface YBGInheritViewController ()
-
+@property (nonatomic, assign) BOOL lightContent;/**< 白色*/
 @end
 
 @implementation YBGInheritViewController
@@ -31,7 +31,18 @@
         
     });
 }
-
+- (IBAction)changeStatusBarColor:(id)sender {
+    self.lightContent = !self.lightContent;
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+}
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    if (self.lightContent) {
+        return UIStatusBarStyleLightContent;
+    }
+    return UIStatusBarStyleDefault;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -39,6 +39,7 @@
 		E56369891D6AFF2500B9E83E /* YRDUpLoadFileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E56369881D6AFF2500B9E83E /* YRDUpLoadFileObject.m */; };
 		E563698C1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E563698B1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m */; };
 		E563698E1D6BE64600B9E83E /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = E563698D1D6BE64600B9E83E /* index.js */; };
+		E56369931D6C3BF800B9E83E /* YBGNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E56369921D6C3BF800B9E83E /* YBGNavigationViewController.m */; };
 		E571E2BB1D58309600918EF1 /* YBGRestfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2BA1D58309600918EF1 /* YBGRestfulViewController.m */; };
 		E571E2BE1D58325200918EF1 /* YBGRestfulGetApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2BD1D58325200918EF1 /* YBGRestfulGetApiManager.m */; };
 		E571E2C21D58342500918EF1 /* YBGRestfulTestService.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2C11D58342500918EF1 /* YBGRestfulTestService.m */; };
@@ -165,6 +166,8 @@
 		E563698A1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulUploadApiManager.h; sourceTree = "<group>"; };
 		E563698B1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulUploadApiManager.m; sourceTree = "<group>"; };
 		E563698D1D6BE64600B9E83E /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		E56369911D6C3BF800B9E83E /* YBGNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGNavigationViewController.h; sourceTree = "<group>"; };
+		E56369921D6C3BF800B9E83E /* YBGNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGNavigationViewController.m; sourceTree = "<group>"; };
 		E571E2B91D58309600918EF1 /* YBGRestfulViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulViewController.h; sourceTree = "<group>"; };
 		E571E2BA1D58309600918EF1 /* YBGRestfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulViewController.m; sourceTree = "<group>"; };
 		E571E2BC1D58325200918EF1 /* YBGRestfulGetApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulGetApiManager.h; sourceTree = "<group>"; };
@@ -827,6 +830,8 @@
 			children = (
 				E58D746D1D4737F8002D1120 /* YBGBaseViewController.h */,
 				E58D746E1D4737F8002D1120 /* YBGBaseViewController.m */,
+				E56369911D6C3BF800B9E83E /* YBGNavigationViewController.h */,
+				E56369921D6C3BF800B9E83E /* YBGNavigationViewController.m */,
 			);
 			path = BaseControllers;
 			sourceTree = "<group>";
@@ -1343,6 +1348,7 @@
 				E57E4FF01D40C5C600675B61 /* YBGBaseDataController.m in Sources */,
 				E559C52C1D001B7B00E118E4 /* HTTPPostTableViewController.m in Sources */,
 				E571E2C51D583A4800918EF1 /* YBGRestfulPostApiManager.m in Sources */,
+				E56369931D6C3BF800B9E83E /* YBGNavigationViewController.m in Sources */,
 				E571E2C81D5888C300918EF1 /* YBGRestfulPutApiManager.m in Sources */,
 				E513E6C71D49B646000B0809 /* FDFeedCell.m in Sources */,
 				E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */,
