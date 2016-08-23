@@ -156,14 +156,14 @@
 //    
 //    fileObect.fileMemeType = YRDUploadFileTypePNGImage;
     //这种是根据文件地址生成data
-//    NSString *path = [[NSBundle mainBundle]pathForResource:@"index" ofType:@"js"];
-//
-//    fileObect.fileData = [NSData dataWithContentsOfFile:path];
-//        fileObect.fileName = @"index.js";
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"index" ofType:@"js"];
+
+    fileObect.fileData = [NSData dataWithContentsOfFile:path];
+        fileObect.fileName = @"index.js";
     
-    NSString *path1 = [[NSBundle mainBundle]pathForResource:@"Xshell5" ofType:@"exe"];
-    fileObect.fileData = [NSData dataWithContentsOfFile:path1];
-    fileObect.fileName = @"Xshell5.exe";
+//    NSString *path1 = [[NSBundle mainBundle]pathForResource:@"Xshell5" ofType:@"exe"];
+//    fileObect.fileData = [NSData dataWithContentsOfFile:path1];
+//    fileObect.fileName = @"Xshell5.exe";
         fileObect.fileUploadKey = @"file1";
     
         fileObect.fileMemeType = YRDUploadFileTypeStream;

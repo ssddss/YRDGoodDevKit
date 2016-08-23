@@ -39,7 +39,6 @@
 		E56369891D6AFF2500B9E83E /* YRDUpLoadFileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E56369881D6AFF2500B9E83E /* YRDUpLoadFileObject.m */; };
 		E563698C1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E563698B1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m */; };
 		E563698E1D6BE64600B9E83E /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = E563698D1D6BE64600B9E83E /* index.js */; };
-		E56369901D6BFA2200B9E83E /* Xshell5.exe in Resources */ = {isa = PBXBuildFile; fileRef = E563698F1D6BFA2200B9E83E /* Xshell5.exe */; };
 		E571E2BB1D58309600918EF1 /* YBGRestfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2BA1D58309600918EF1 /* YBGRestfulViewController.m */; };
 		E571E2BE1D58325200918EF1 /* YBGRestfulGetApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2BD1D58325200918EF1 /* YBGRestfulGetApiManager.m */; };
 		E571E2C21D58342500918EF1 /* YBGRestfulTestService.m in Sources */ = {isa = PBXBuildFile; fileRef = E571E2C11D58342500918EF1 /* YBGRestfulTestService.m */; };
@@ -166,7 +165,6 @@
 		E563698A1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulUploadApiManager.h; sourceTree = "<group>"; };
 		E563698B1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulUploadApiManager.m; sourceTree = "<group>"; };
 		E563698D1D6BE64600B9E83E /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
-		E563698F1D6BFA2200B9E83E /* Xshell5.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xshell5.exe; sourceTree = "<group>"; };
 		E571E2B91D58309600918EF1 /* YBGRestfulViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulViewController.h; sourceTree = "<group>"; };
 		E571E2BA1D58309600918EF1 /* YBGRestfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRestfulViewController.m; sourceTree = "<group>"; };
 		E571E2BC1D58325200918EF1 /* YBGRestfulGetApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulGetApiManager.h; sourceTree = "<group>"; };
@@ -589,7 +587,6 @@
 		E571E2B81D58307E00918EF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E563698F1D6BFA2200B9E83E /* Xshell5.exe */,
 				E563698D1D6BE64600B9E83E /* index.js */,
 			);
 			path = Model;
@@ -1226,7 +1223,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E56369901D6BFA2200B9E83E /* Xshell5.exe in Resources */,
 				E5340B1E1C9661AD00205879 /* LaunchScreen.storyboard in Resources */,
 				E5340B1B1C9661AD00205879 /* Assets.xcassets in Resources */,
 				E5340B191C9661AD00205879 /* Main.storyboard in Resources */,
