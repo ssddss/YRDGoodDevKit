@@ -167,10 +167,16 @@
         fileObect.fileUploadKey = @"file1";
     
         fileObect.fileMemeType = YRDUploadFileTypeStream;
-    
+    @weakify(self);
     [self.uploadApiManager startUploadTaskWithRequest:urlString params:@{@"name":@"ssdd"} files:@[fileObect] progress:^(NSProgress *uploadProgress) {
         //打印下上传进度
         NSLog(@"%lf",1.0 *uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @strongify(self);
+            [self.uploadProgress setProgress:(float)uploadProgress.completedUnitCount / (float)uploadProgress.totalUnitCount];
+            
+        });
     } success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSLog(@"请求成功：%@",responseObject);

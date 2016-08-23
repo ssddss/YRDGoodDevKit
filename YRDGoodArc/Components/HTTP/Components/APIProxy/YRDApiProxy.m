@@ -150,7 +150,7 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
       NSLog(@"\n==================================\n\nDownloadRequest Start: \n\n %@\n\n==================================", request.URL);
     __block NSURLSessionDownloadTask *downLoadTask = nil;
     downLoadTask = [self.sessionManager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"正在下载requestPath:%@ :%lld/%lld",request.URL.absoluteString,downloadProgress.completedUnitCount,downloadProgress.totalUnitCount);
+//        NSLog(@"正在下载requestPath:%@ :%lld/%lld",request.URL.absoluteString,downloadProgress.completedUnitCount,downloadProgress.totalUnitCount);
         downloadProgressBlock(downloadProgress);
     } destination:destination completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         NSNumber *requestID = @([downLoadTask taskIdentifier]);
@@ -183,7 +183,6 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
         block(formData);
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
-        NSLog(@"正在上传");
 
         upProgress(uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -219,6 +218,18 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
 
 }
 
+/**
+ *  这个跟AFNetworking里的是一样的，搬了过来，因为我们的接口要对request的http头加字段
+ *
+ *  @param URLString      <#URLString description#>
+ *  @param parameters     <#parameters description#>
+ *  @param block          <#block description#>
+ *  @param uploadProgress <#uploadProgress description#>
+ *  @param success        <#success description#>
+ *  @param failure        <#failure description#>
+ *
+ *  @return <#return value description#>
+ */
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
                     parameters:(id)parameters
      constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
@@ -235,6 +246,8 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
     [httpHeaderFields enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [request setValue:obj forHTTPHeaderField:key];
     }];
+    
+    
     if (serializationError) {
         if (failure) {
 #pragma clang diagnostic push
