@@ -19,6 +19,9 @@
 #import "YRDLogger.h"
 #import "NSURLRequest+YRDNetworkingMethods.h"
 
+#import "RSA.h"
+#import "YBGRequestParamsTool.h"
+
 @interface YRDRequestGenerator ()
 @property (nonatomic, strong) AFHTTPRequestSerializer *httpRequestSerializer;
 
@@ -97,7 +100,7 @@
     //最终参数
     NSMutableDictionary *finalRequstParams = [NSMutableDictionary dictionaryWithDictionary:requestParams];
     [finalRequstParams addEntriesFromDictionary:commonParams];
-    
+
     NSString *signature = [YRDSignatureGenerator signRestfulPOSTWithApiParams:requestParams commonParams:commonParams methodName:methodName apiVersion:service.apiVersion privateKey:service.privateKey];
 //    NSString *urlString = [NSString stringWithFormat:@"%@%@/%@?&%@", service.apiBaseUrl, service.apiVersion, methodName, [commonParams YRD_urlParamsStringSignature:NO]];
     NSString *urlString = [NSString stringWithFormat:@"%@/%@", service.apiBaseUrl, methodName];
@@ -105,13 +108,20 @@
     NSDictionary *restfulHeader = [self commRESTHeadersWithService:service signature:signature];
 //    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:kYRDNetworkingTimeoutSeconds];
     NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:@"POST" URLString:urlString parameters:nil error:NULL];
+    [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
 //    request.HTTPMethod = @"POST";
     [request setTimeoutInterval:kYRDNetworkingTimeoutSeconds];
     [restfulHeader enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [request setValue:obj forHTTPHeaderField:key];
     }];
     if (finalRequstParams) {
-        request.HTTPBody = [NSJSONSerialization dataWithJSONObject:finalRequstParams options:NSJSONWritingPrettyPrinted error:NULL];
+//        request.HTTPBody =[NSJSONSerialization dataWithJSONObject:finalRequstParams options:NSJSONWritingPrettyPrinted error:NULL];
+        NSData *paramsNSData = [NSJSONSerialization dataWithJSONObject:finalRequstParams options:NSJSONWritingPrettyPrinted error:NULL];
+        NSString *jsonParamsStr = [[NSString alloc]initWithData:paramsNSData encoding:NSUTF8StringEncoding];
+        NSString *rsaEncryptStr = [RSA encryptString:jsonParamsStr publicKey:[YBGRequestParamsTool sharedRequestParamsTool].RSAEncryptionPublicKey];
+        
+        NSData *contentData = [rsaEncryptStr dataUsingEncoding:NSUTF8StringEncoding];
+        request.HTTPBody = contentData;
     }
     request.requestParams = requestParams;
     [YRDLogger logDebugInfoWithRequest:request apiName:methodName service:service requestParams:requestParams httpMethod:@"RESTful POST"];
@@ -133,6 +143,7 @@
     }];
     if (requestParams) {
         request.HTTPBody = [NSJSONSerialization dataWithJSONObject:requestParams options:NSJSONWritingPrettyPrinted error:NULL];
+        
     }
     request.requestParams = requestParams;
     [YRDLogger logDebugInfoWithRequest:request apiName:methodName service:service requestParams:requestParams httpMethod:@"RESTful PUT"];
@@ -167,9 +178,9 @@
 //    [headerDic setValue:service.publicKey forKey:@"key"];
     //要使用到的token
     [headerDic setValue:@"12345" forKey:@"token"];
-
-    [headerDic setValue:@"application/json" forKey:@"Accept"];
-    [headerDic setValue:@"application/json" forKey:@"Content-Type"];
+    [headerDic setValue:@"123" forKey:@"Asym-Key"];
+//    [headerDic setValue:@"application/json" forKey:@"Accept"];
+//    [headerDic setValue:@"application/json" forKey:@"Content-Type"];
    
     return headerDic;
 }

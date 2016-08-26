@@ -53,7 +53,7 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
             self.child = (id <YRDAPIManager>)self;
         }
         else {
-            NSException *exception = [[NSException alloc] init];
+            NSException *exception = [[NSException alloc] initWithName:@"child代理未实现" reason:@"必须实现YRDAPIManager代理" userInfo:nil];
             @throw exception;
         }
        
@@ -213,6 +213,10 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
     NSInteger requestId = 0;
     NSDictionary *apiParams = [self reformParams:params];
     if ([self shouldCallAPIWithParams:apiParams]) {
+        if (![self.validator respondsToSelector:@selector(manager:isCorrectWithParamsData:)]) {
+             NSException *exception = [[NSException alloc] initWithName:@"validator代理未实现" reason:@"必须实现YRDAPIManagerValidator代理" userInfo:nil];
+             @throw exception;
+        }
         if ([self.validator manager:self isCorrectWithParamsData:apiParams]) {
             
              // 先检查一下是否有缓存
@@ -285,6 +289,12 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
         self.fetchedRawData = [response.responseData copy];
     }
     [self removeRequestIdWithRequestID:response.requestId];
+    
+    if (![self.validator respondsToSelector:@selector(manager:isCorrectWithCallBackData:)]) {
+        NSException *exception = [[NSException alloc] initWithName:@"validator代理未实现" reason:@"必须实现YRDAPIManagerValidator代理" userInfo:nil];
+        @throw exception;
+    }
+    
     if ([self.validator manager:self isCorrectWithCallBackData:response.content]) {
         
         if ([self shouldCache] && !response.isCache) {

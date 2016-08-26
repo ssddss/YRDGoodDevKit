@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		711031753C368D895300CAD3 /* libPods-YRDGoodArc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 524139B428E764F17159580F /* libPods-YRDGoodArc.a */; };
+		E50B6CFA1D6EC74C00951CDE /* YBGRequestParamsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E50B6CF91D6EC74C00951CDE /* YBGRequestParamsTool.m */; };
+		E50B6CFD1D6EC7AD00951CDE /* YBGEncryptionAndUUIDFromServerParam.m in Sources */ = {isa = PBXBuildFile; fileRef = E50B6CFC1D6EC7AD00951CDE /* YBGEncryptionAndUUIDFromServerParam.m */; };
+		E50B6D011D6ECE9200951CDE /* YBGRSAEncryptionKeyAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E50B6D001D6ECE9200951CDE /* YBGRSAEncryptionKeyAPIManager.m */; };
+		E50B6D041D6ECEC600951CDE /* YBGUUIDFromServerAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E50B6D031D6ECEC600951CDE /* YBGUUIDFromServerAPIManager.m */; };
+		E50B6D081D6ED08300951CDE /* YBGEncryptionService.m in Sources */ = {isa = PBXBuildFile; fileRef = E50B6D071D6ED08300951CDE /* YBGEncryptionService.m */; };
 		E513E6BF1D4992FE000B0809 /* YBGInheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E513E6BE1D4992FE000B0809 /* YBGInheritViewController.m */; };
 		E513E6C71D49B646000B0809 /* FDFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E513E6C21D49B646000B0809 /* FDFeedCell.m */; };
 		E513E6C81D49B646000B0809 /* FDFeedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E513E6C41D49B646000B0809 /* FDFeedEntity.m */; };
@@ -36,6 +41,11 @@
 		E559C52F1D001C6E00E118E4 /* YiBaoGaoApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C52E1D001C6E00E118E4 /* YiBaoGaoApiManager.m */; };
 		E559C5331D00217600E118E4 /* SchoolListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C5321D00217600E118E4 /* SchoolListReformer.m */; };
 		E559C5371D0022AD00E118E4 /* SchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E559C5361D0022AD00E118E4 /* SchoolItem.m */; };
+		E56018341D6D7F8800F94A98 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E56018281D6D7F8800F94A98 /* Base64.m */; };
+		E56018361D6D7F8800F94A98 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = E560182D1D6D7F8800F94A98 /* NSString+Hash.m */; };
+		E56018371D6D7F8800F94A98 /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = E56018301D6D7F8800F94A98 /* NSString+Encryption.m */; };
+		E56018381D6D7F8800F94A98 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = E56018331D6D7F8800F94A98 /* RSA.m */; };
+		E560183D1D6D82C800F94A98 /* YBGEncryptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E560183C1D6D82C800F94A98 /* YBGEncryptionViewController.m */; };
 		E56369891D6AFF2500B9E83E /* YRDUpLoadFileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E56369881D6AFF2500B9E83E /* YRDUpLoadFileObject.m */; };
 		E563698C1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E563698B1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m */; };
 		E563698E1D6BE64600B9E83E /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = E563698D1D6BE64600B9E83E /* index.js */; };
@@ -107,6 +117,16 @@
 		524139B428E764F17159580F /* libPods-YRDGoodArc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YRDGoodArc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE42E0FB5C29340E89F25B7 /* Pods-YRDGoodArc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YRDGoodArc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YRDGoodArc/Pods-YRDGoodArc.debug.xcconfig"; sourceTree = "<group>"; };
 		D00A1A3572EB534E01342B99 /* Pods-YRDGoodArc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YRDGoodArc.release.xcconfig"; path = "Pods/Target Support Files/Pods-YRDGoodArc/Pods-YRDGoodArc.release.xcconfig"; sourceTree = "<group>"; };
+		E50B6CF81D6EC74C00951CDE /* YBGRequestParamsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRequestParamsTool.h; sourceTree = "<group>"; };
+		E50B6CF91D6EC74C00951CDE /* YBGRequestParamsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRequestParamsTool.m; sourceTree = "<group>"; };
+		E50B6CFB1D6EC7AD00951CDE /* YBGEncryptionAndUUIDFromServerParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGEncryptionAndUUIDFromServerParam.h; sourceTree = "<group>"; };
+		E50B6CFC1D6EC7AD00951CDE /* YBGEncryptionAndUUIDFromServerParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGEncryptionAndUUIDFromServerParam.m; sourceTree = "<group>"; };
+		E50B6CFF1D6ECE9200951CDE /* YBGRSAEncryptionKeyAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRSAEncryptionKeyAPIManager.h; sourceTree = "<group>"; };
+		E50B6D001D6ECE9200951CDE /* YBGRSAEncryptionKeyAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGRSAEncryptionKeyAPIManager.m; sourceTree = "<group>"; };
+		E50B6D021D6ECEC600951CDE /* YBGUUIDFromServerAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGUUIDFromServerAPIManager.h; sourceTree = "<group>"; };
+		E50B6D031D6ECEC600951CDE /* YBGUUIDFromServerAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGUUIDFromServerAPIManager.m; sourceTree = "<group>"; };
+		E50B6D061D6ED08300951CDE /* YBGEncryptionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGEncryptionService.h; sourceTree = "<group>"; };
+		E50B6D071D6ED08300951CDE /* YBGEncryptionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGEncryptionService.m; sourceTree = "<group>"; };
 		E513E6BD1D4992FE000B0809 /* YBGInheritViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGInheritViewController.h; sourceTree = "<group>"; };
 		E513E6BE1D4992FE000B0809 /* YBGInheritViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGInheritViewController.m; sourceTree = "<group>"; };
 		E513E6C11D49B646000B0809 /* FDFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFeedCell.h; sourceTree = "<group>"; };
@@ -161,6 +181,16 @@
 		E559C5321D00217600E118E4 /* SchoolListReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolListReformer.m; sourceTree = "<group>"; };
 		E559C5351D0022AD00E118E4 /* SchoolItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolItem.h; sourceTree = "<group>"; };
 		E559C5361D0022AD00E118E4 /* SchoolItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolItem.m; sourceTree = "<group>"; };
+		E56018271D6D7F8800F94A98 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		E56018281D6D7F8800F94A98 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		E560182C1D6D7F8800F94A98 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		E560182D1D6D7F8800F94A98 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		E560182F1D6D7F8800F94A98 /* NSString+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encryption.h"; sourceTree = "<group>"; };
+		E56018301D6D7F8800F94A98 /* NSString+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encryption.m"; sourceTree = "<group>"; };
+		E56018321D6D7F8800F94A98 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
+		E56018331D6D7F8800F94A98 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
+		E560183B1D6D82C800F94A98 /* YBGEncryptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGEncryptionViewController.h; sourceTree = "<group>"; };
+		E560183C1D6D82C800F94A98 /* YBGEncryptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBGEncryptionViewController.m; sourceTree = "<group>"; };
 		E56369871D6AFF2500B9E83E /* YRDUpLoadFileObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRDUpLoadFileObject.h; sourceTree = "<group>"; };
 		E56369881D6AFF2500B9E83E /* YRDUpLoadFileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRDUpLoadFileObject.m; sourceTree = "<group>"; };
 		E563698A1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBGRestfulUploadApiManager.h; sourceTree = "<group>"; };
@@ -324,6 +354,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E50B6CF71D6EC6D700951CDE /* APIBeforehandRequestTool */ = {
+			isa = PBXGroup;
+			children = (
+				E50B6CFE1D6ECE5600951CDE /* API */,
+				E50B6CF81D6EC74C00951CDE /* YBGRequestParamsTool.h */,
+				E50B6CF91D6EC74C00951CDE /* YBGRequestParamsTool.m */,
+				E50B6CFB1D6EC7AD00951CDE /* YBGEncryptionAndUUIDFromServerParam.h */,
+				E50B6CFC1D6EC7AD00951CDE /* YBGEncryptionAndUUIDFromServerParam.m */,
+			);
+			path = APIBeforehandRequestTool;
+			sourceTree = "<group>";
+		};
+		E50B6CFE1D6ECE5600951CDE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E50B6CFF1D6ECE9200951CDE /* YBGRSAEncryptionKeyAPIManager.h */,
+				E50B6D001D6ECE9200951CDE /* YBGRSAEncryptionKeyAPIManager.m */,
+				E50B6D021D6ECEC600951CDE /* YBGUUIDFromServerAPIManager.h */,
+				E50B6D031D6ECEC600951CDE /* YBGUUIDFromServerAPIManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E50B6D051D6ED08300951CDE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E50B6D061D6ED08300951CDE /* YBGEncryptionService.h */,
+				E50B6D071D6ED08300951CDE /* YBGEncryptionService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		E513E6BC1D4992E4000B0809 /* InheritBaseController */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +474,7 @@
 		E5340B361C96A72900205879 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				E56018391D6D82B500F94A98 /* Encryption */,
 				E571E2DA1D58917100918EF1 /* GlobalHelpers */,
 				E571E2B51D58307E00918EF1 /* Restful */,
 				E5435DB01D4EF7FA0021493F /* PullToRefreshDemo */,
@@ -537,6 +600,63 @@
 				E559C5361D0022AD00E118E4 /* SchoolItem.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E56018261D6D7F8800F94A98 /* Encryptions */ = {
+			isa = PBXGroup;
+			children = (
+				E56018271D6D7F8800F94A98 /* Base64.h */,
+				E56018281D6D7F8800F94A98 /* Base64.m */,
+				E560182B1D6D7F8800F94A98 /* Hash */,
+				E560182E1D6D7F8800F94A98 /* NSString+Encryption */,
+				E56018311D6D7F8800F94A98 /* RSAEncrypt */,
+			);
+			path = Encryptions;
+			sourceTree = "<group>";
+		};
+		E560182B1D6D7F8800F94A98 /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				E560182C1D6D7F8800F94A98 /* NSString+Hash.h */,
+				E560182D1D6D7F8800F94A98 /* NSString+Hash.m */,
+			);
+			path = Hash;
+			sourceTree = "<group>";
+		};
+		E560182E1D6D7F8800F94A98 /* NSString+Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				E560182F1D6D7F8800F94A98 /* NSString+Encryption.h */,
+				E56018301D6D7F8800F94A98 /* NSString+Encryption.m */,
+			);
+			path = "NSString+Encryption";
+			sourceTree = "<group>";
+		};
+		E56018311D6D7F8800F94A98 /* RSAEncrypt */ = {
+			isa = PBXGroup;
+			children = (
+				E56018321D6D7F8800F94A98 /* RSA.h */,
+				E56018331D6D7F8800F94A98 /* RSA.m */,
+			);
+			path = RSAEncrypt;
+			sourceTree = "<group>";
+		};
+		E56018391D6D82B500F94A98 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				E50B6D051D6ED08300951CDE /* Service */,
+				E560183A1D6D82B500F94A98 /* VC */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
+		E560183A1D6D82B500F94A98 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				E560183B1D6D82C800F94A98 /* YBGEncryptionViewController.h */,
+				E560183C1D6D82C800F94A98 /* YBGEncryptionViewController.m */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		E56369861D6AFF0B00B9E83E /* UpLoadFileObject */ = {
@@ -846,6 +966,8 @@
 		E598AC621CEDB23300294141 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E50B6CF71D6EC6D700951CDE /* APIBeforehandRequestTool */,
+				E56018261D6D7F8800F94A98 /* Encryptions */,
 				E5435D9E1D49DAFD0021493F /* AOP */,
 				E58D746A1D4737DA002D1120 /* UILayer */,
 				E58D74661D46FCC0002D1120 /* Tools */,
@@ -1293,6 +1415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5340B3D1C96A72900205879 /* SecondViewController.m in Sources */,
+				E50B6D081D6ED08300951CDE /* YBGEncryptionService.m in Sources */,
 				E57E500F1D40D1B500675B61 /* SDHomeSubjectsViewModel.m in Sources */,
 				E598ACA01CF2B36700294141 /* YRDCache.m in Sources */,
 				E513E6C81D49B646000B0809 /* FDFeedEntity.m in Sources */,
@@ -1305,9 +1428,11 @@
 				E571E2BE1D58325200918EF1 /* YBGRestfulGetApiManager.m in Sources */,
 				E598AC8F1CF2A7DB00294141 /* YRDServiceFactory.m in Sources */,
 				E5DA70131D015836008E9724 /* YRDCommonParamsGenerator.m in Sources */,
+				E56018361D6D7F8800F94A98 /* NSString+Hash.m in Sources */,
 				E59C310E1D3F6D20006F4E63 /* YBGMediatorErrorViewController.m in Sources */,
 				E5340B4E1C970F4B00205879 /* Request.m in Sources */,
 				E5340B441C96AB2200205879 /* YYModelTestViewController.m in Sources */,
+				E50B6D041D6ECEC600951CDE /* YBGUUIDFromServerAPIManager.m in Sources */,
 				E57E50091D40D18300675B61 /* SDSubjectsView.m in Sources */,
 				E5340B471C96B0B400205879 /* Dog.m in Sources */,
 				E59C311F1D3F71D0006F4E63 /* YBGTarget_A.m in Sources */,
@@ -1315,6 +1440,7 @@
 				E5DA70271D01594A008E9724 /* YRDLoggerConfiguration.m in Sources */,
 				E5340B341C969E9900205879 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				E5DA70141D015836008E9724 /* YRDRequestGenerator.m in Sources */,
+				E50B6D011D6ECE9200951CDE /* YBGRSAEncryptionKeyAPIManager.m in Sources */,
 				E598ACCD1CF4069B00294141 /* WeatherViewController.m in Sources */,
 				E571E2E51D58917100918EF1 /* YRDServiceChangable.m in Sources */,
 				E5340B4B1C970F1500205879 /* AFAppDotNetAPIClient.m in Sources */,
@@ -1324,13 +1450,17 @@
 				E57E4FF71D40CE9D00675B61 /* YBGBaseModel.m in Sources */,
 				E598AC781CEF011700294141 /* NSMutableString+YRDNetworkingMethods.m in Sources */,
 				E57E50001D40D13D00675B61 /* SDSubject.m in Sources */,
+				E56018341D6D7F8800F94A98 /* Base64.m in Sources */,
+				E560183D1D6D82C800F94A98 /* YBGEncryptionViewController.m in Sources */,
 				E563698C1D6B0D6200B9E83E /* YBGRestfulUploadApiManager.m in Sources */,
 				E5DA70041D0157B4008E9724 /* YRDAPIBaseManager.m in Sources */,
 				E571E2EA1D597C8D00918EF1 /* YBGDownloadApiManager.m in Sources */,
+				E50B6CFD1D6EC7AD00951CDE /* YBGEncryptionAndUUIDFromServerParam.m in Sources */,
 				E59C31121D3F6D63006F4E63 /* YBGTarget_Default.m in Sources */,
 				E57C84AD1D1933FF00311A06 /* RealmDemoViewController.m in Sources */,
 				E5DA70161D015836008E9724 /* YRDUDIDGenerator.m in Sources */,
 				E559C5331D00217600E118E4 /* SchoolListReformer.m in Sources */,
+				E56018381D6D7F8800F94A98 /* RSA.m in Sources */,
 				E57E50191D411FE000675B61 /* YBGHomeListReformer.m in Sources */,
 				E57C84B01D19353A00311A06 /* RealmDog.m in Sources */,
 				E598AC751CEEFF3000294141 /* NSString+YRDNetworkingMethods.m in Sources */,
@@ -1339,6 +1469,7 @@
 				E5340B411C96AA0500205879 /* User.m in Sources */,
 				E598AC8C1CF2A5D900294141 /* YRDService.m in Sources */,
 				E598AC7B1CEF07C800294141 /* NSURLRequest+YRDNetworkingMethods.m in Sources */,
+				E56018371D6D7F8800F94A98 /* NSString+Encryption.m in Sources */,
 				E57C84B31D1938BE00311A06 /* RealmBook.m in Sources */,
 				E5DA70261D01594A008E9724 /* YRDAppContext.m in Sources */,
 				E598AC9D1CF2B17F00294141 /* YRDCachedObject.m in Sources */,
@@ -1377,6 +1508,7 @@
 				E57E4FF31D40C5D900675B61 /* YBGBaseViewModel.m in Sources */,
 				E571E2E61D58917100918EF1 /* WeatherService.m in Sources */,
 				E5DA70151D015836008E9724 /* YRDSignatureGenerator.m in Sources */,
+				E50B6CFA1D6EC74C00951CDE /* YBGRequestParamsTool.m in Sources */,
 				E5435DA21D49DB140021493F /* YBGViewControllerIntercepter.m in Sources */,
 				E58D74691D46FFD6002D1120 /* YBGTimeUtil.m in Sources */,
 			);

@@ -168,6 +168,13 @@
                                     <segue destination="cU2-qT-Vml" kind="show" id="zB9-zh-Smw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YI5-gc-diT">
+                                <rect key="frame" x="166" y="391" width="60" height="30"/>
+                                <state key="normal" title="加密解密"/>
+                                <connections>
+                                    <segue destination="69O-Oh-WOZ" kind="show" id="9YS-Rb-qNX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -240,6 +247,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXE-Eb-tcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1935" y="1794"/>
+        </scene>
+        <!--Encryption View Controller-->
+        <scene sceneID="4X6-gZ-2xv">
+            <objects>
+                <viewController id="69O-Oh-WOZ" customClass="YBGEncryptionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BJs-ce-sZ9"/>
+                        <viewControllerLayoutGuide type="bottom" id="CfM-gZ-aKe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O3P-mx-jbR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ix0-Vx-M1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2599" y="-1032"/>
         </scene>
         <!--Mediator View Controller-->
         <scene sceneID="kH4-XX-r4F">
