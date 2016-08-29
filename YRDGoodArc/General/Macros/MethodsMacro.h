@@ -21,6 +21,14 @@
 
 #pragma mark - 调试输出
 
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#define DebugMethod() NSLog(@"%s", __func__)
+#else
+#define NSLog(...)
+#define DebugMethod()
+#endif
+
 // DLog displays output if DEBUG
 #ifndef RELEASE
 #ifndef DLog
@@ -31,5 +39,8 @@
 #   define DLog(...)
 #endif
 #endif
+
+
+
 
 #endif /* MethodsMacro_h */
