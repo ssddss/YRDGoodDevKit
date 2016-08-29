@@ -47,4 +47,11 @@
 - (YRDAPIManagerRequestType)requestType {
     return YRDAPIManagerRequestTypeRestPost;
 }
+- (NSDictionary *)httpHeaderFields {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:0];
+    [dict setValue:@"text/plain" forKey:@"Content-Type"];
+    [dict setValue:@"123" forKey:@"Asym-Key"];
+    
+    return dict;
+}
 @end

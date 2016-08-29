@@ -42,6 +42,11 @@
 
  */
 - (void)refreshRequestParams {
+    //如果有后台返回的设备唯一码就不需要请求了
+    if (self.params.deviceUUIDFromServer.length) {
+        NSLog(@"存在设备唯一码了");
+        return;
+    }
     @weakify(self);
     [self.rsaEncryptionPublicAPI startWithCompletionBlockWithSuccess:^(YRDAPIBaseManager *manager) {
         @strongify(self);
@@ -72,6 +77,8 @@
         NSLog(@"获取失败");
     }];
 }
+#pragma mark - private Method 
+
 #pragma mark - getters and setters
 - (NSString *)RSAEncryptionPublicKey {
     return self.params.RSAEncryptionPublicKey;

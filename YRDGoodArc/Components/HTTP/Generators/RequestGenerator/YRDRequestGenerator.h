@@ -26,7 +26,7 @@
  *
  *  @return <#return value description#>
  */
-- (NSURLRequest *)generateGETRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName;
+- (NSURLRequest *)generateGETRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams httpHeaderFields:(NSDictionary *)headerFields methodName:(NSString *)methodName;
 /**
  *  普通Post请求
  *
@@ -36,7 +36,7 @@
  *
  *  @return <#return value description#>
  */
-- (NSURLRequest *)generatePOSTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName;
+- (NSURLRequest *)generatePOSTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams httpHeaderFields:(NSDictionary *)headerFields methodName:(NSString *)methodName;
 /**
  *  Restful Get请求
  *
@@ -46,7 +46,7 @@
  *
  *  @return <#return value description#>
  */
-- (NSURLRequest *)generateRestfulGETRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName;
+- (NSURLRequest *)generateRestfulGETRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams httpHeaderFields:(NSDictionary *)headerFields methodName:(NSString *)methodName;
 /**
  *  Restful Post请求
  *
@@ -56,7 +56,7 @@
  *
  *  @return <#return value description#>
  */
-- (NSURLRequest *)generateRestfulPOSTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName;
+- (NSURLRequest *)generateRestfulPOSTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams httpHeaderFields:(NSDictionary *)headerFields methodName:(NSString *)methodName;
 /**
  *  Restful Put请求
  *
@@ -66,7 +66,7 @@
  *
  *  @return <#return value description#>
  */
-- (NSURLRequest *)generateRestfulPUTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName;
+- (NSURLRequest *)generateRestfulPUTRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams httpHeaderFields:(NSDictionary *)headerFields methodName:(NSString *)methodName;
 /**
  *  Restful Delete请求
  *
@@ -76,5 +76,5 @@
  *
  *  @return <#return value description#>
  */
-- (NSURLRequest *)generateRestfulDELETERequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName;
+- (NSURLRequest *)generateRestfulDELETERequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams httpHeaderFields:(NSDictionary *)headerFields methodName:(NSString *)methodName;
 @end

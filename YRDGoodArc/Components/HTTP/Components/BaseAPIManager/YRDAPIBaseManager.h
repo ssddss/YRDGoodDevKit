@@ -169,7 +169,13 @@ typedef NS_ENUM (NSUInteger, YRDAPIManagerRequestType){
  *  @return 请求的方式
  */
 - (YRDAPIManagerRequestType)requestType;
-
+@optional
+/**
+ *  提供http请求头,默认会有后台给的设备uuid参数，用来处理设备还没有获取得到设备Id的问题，如果不用获取设备id的自己实现，否则要调用[super httpHeaderFields]
+ *
+ *  @return 
+ */
+- (NSDictionary *)httpHeaderFields;
 @optional
 - (void)cleanData;
 /**

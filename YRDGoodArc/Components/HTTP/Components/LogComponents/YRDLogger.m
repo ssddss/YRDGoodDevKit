@@ -124,6 +124,6 @@
     [actionDict addEntriesFromDictionary:params];
     [actionDict addEntriesFromDictionary:[YRDCommonParamsGenerator commonParamsDictionaryForLog]];
     NSDictionary *logJsonDict = @{self.configParams.sendActionKey:[@[actionDict] YRD_jsonString]};
-    [[YRDApiProxy sharedInstance] callPOSTWithParams:logJsonDict serviceIdentifier:self.configParams.serviceType methodName:self.configParams.sendActionMethod success:nil fail:nil];
+    [[YRDApiProxy sharedInstance] callPOSTWithParams:logJsonDict serviceIdentifier:self.configParams.serviceType methodName:self.configParams.sendActionMethod httpHeaderFields:nil success:nil fail:nil];
 }
 @end

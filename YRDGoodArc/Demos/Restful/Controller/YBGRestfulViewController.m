@@ -51,12 +51,15 @@
     }];
 }
 - (IBAction)postAction:(id)sender {
-    [self.postApiManager startWithCompletionBlockWithSuccess:^(YRDAPIBaseManager *manager) {
-        NSLog(@"post success");
-
-    } failure:^(YRDAPIBaseManager *manager) {
-        NSLog(@"post failed");
-    }];
+    for (int i = 0; i < 4; i++) {
+        [self.postApiManager startWithCompletionBlockWithSuccess:^(YRDAPIBaseManager *manager) {
+            NSLog(@"post success");
+            
+        } failure:^(YRDAPIBaseManager *manager) {
+            NSLog(@"post failed");
+        }];
+    }
+   
 }
 - (IBAction)putAction:(id)sender {
     [self.putApiManager startWithCompletionBlockWithSuccess:^(YRDAPIBaseManager *manager) {

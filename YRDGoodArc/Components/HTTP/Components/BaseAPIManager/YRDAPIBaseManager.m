@@ -11,10 +11,11 @@
 #import "YRDCache.h"
 #import "YRDLogger.h"
 #import "YRDServiceFactory.h"
+#import "YBGRequestParamsTool.h"
 
 #define YRDCallAPI(REQUEST_METHOD, REQUEST_ID)                                                       \
 {          __weak typeof(&*self) weakSelf = self;                                                                  \
-REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiParams serviceIdentifier:self.child.serviceType methodName:self.child.methodName success:^(YRDURLResponse *response) { \
+REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiParams serviceIdentifier:self.child.serviceType methodName:self.child.methodName httpHeaderFields:self.child.httpHeaderFields success:^(YRDURLResponse *response) { \
  __strong typeof(&*weakSelf) strongSelf = weakSelf;                 \
 [strongSelf successedOnCallingAPI:response];                                          \
 } fail:^(YRDURLResponse *response) {                                                \
@@ -128,7 +129,7 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
     }
     __weak typeof(&*self) weakSelf = self;
 
-    NSInteger requestId = [[YRDApiProxy sharedInstance]uploadTaskWithRequest:requestURL parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    NSInteger requestId = [[YRDApiProxy sharedInstance]uploadTaskWithRequest:requestURL parameters:params httpHeaderFields:self.child.httpHeaderFields constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         for (YRDUpLoadFileObject *fileObject in files) {
             [formData appendPartWithFileData:fileObject.fileData name:fileObject.fileUploadKey fileName:fileObject.fileName mimeType:[fileObject getMemeTypeStr]];
 
@@ -464,6 +465,15 @@ REQUEST_ID = [[YRDApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiP
         [self successedOnCallingAPI:response];
     });
     return YES;
+}
+#pragma mark - YRDAPIManager
+- (NSDictionary *)httpHeaderFields {
+    [[YBGRequestParamsTool sharedRequestParamsTool]refreshRequestParams];
+    NSString *deviceUUIDFromServer = [YBGRequestParamsTool sharedRequestParamsTool].deviceUUIDFromServer;
+    if (deviceUUIDFromServer.length) {
+        return @{@"deviceId":deviceUUIDFromServer};
+    }
+    return nil;
 }
 #pragma mark - getters and setters
 - (YRDCache *)cache {

@@ -14,17 +14,17 @@ typedef void(^YRDCallback)(YRDURLResponse *response);
 @interface YRDApiProxy : NSObject
 + (instancetype)sharedInstance;
 //Get方法
-- (NSInteger)callGETWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail;
+- (NSInteger)callGETWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail;
 //Post方法
-- (NSInteger)callPOSTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail;
+- (NSInteger)callPOSTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail;
 //RestfulGET方法
-- (NSInteger)callRestfulGETWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail;
+- (NSInteger)callRestfulGETWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail;
 //RestfulPOST方法
-- (NSInteger)callRestfulPOSTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail;
+- (NSInteger)callRestfulPOSTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail;
 //RestfulPUT方法
-- (NSInteger)callRestfulPUTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail;
+- (NSInteger)callRestfulPUTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail;
 //RestfulDELETE方法
-- (NSInteger)callRestfulDELETEWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail;
+- (NSInteger)callRestfulDELETEWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail;
 
 
 
@@ -40,6 +40,7 @@ typedef void(^YRDCallback)(YRDURLResponse *response);
 
 - (NSInteger)uploadTaskWithRequest:(NSString *)request
                         parameters:(id)parameters
+                        httpHeaderFields:(NSDictionary *)headerFields
          constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
                           progress:(void (^)(NSProgress *progress))upProgress
                            success:(void (^)(NSURLSessionDataTask *task, id responseObject))success

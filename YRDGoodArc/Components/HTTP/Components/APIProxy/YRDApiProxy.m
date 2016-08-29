@@ -37,42 +37,42 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
 }
 
 #pragma mark - public methods
-- (NSInteger)callGETWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail
+- (NSInteger)callGETWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail
 {
-    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateGETRequestWithServiceIdentifier:servieIdentifier requestParams:params methodName:methodName];
+    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateGETRequestWithServiceIdentifier:servieIdentifier requestParams:params httpHeaderFields:headerFields methodName:methodName];
     NSNumber *requestId = [self callApiWithRequest:request success:success fail:fail];
     return [requestId integerValue];
 }
 
-- (NSInteger)callPOSTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail
+- (NSInteger)callPOSTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail
 {
-    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generatePOSTRequestWithServiceIdentifier:servieIdentifier requestParams:params methodName:methodName];
+    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generatePOSTRequestWithServiceIdentifier:servieIdentifier requestParams:params httpHeaderFields:headerFields methodName:methodName];
     NSNumber *requestId = [self callApiWithRequest:request success:success fail:fail];
     return [requestId integerValue];
 }
 
-- (NSInteger)callRestfulGETWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail
+- (NSInteger)callRestfulGETWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail
 {
-    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulGETRequestWithServiceIdentifier:servieIdentifier requestParams:params methodName:methodName];
+    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulGETRequestWithServiceIdentifier:servieIdentifier requestParams:params httpHeaderFields:headerFields methodName:methodName];
     NSNumber *requestId = [self callApiWithRequest:request success:success fail:fail];
     return [requestId integerValue];
 }
 
-- (NSInteger)callRestfulPOSTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail
+- (NSInteger)callRestfulPOSTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail
 {
-    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulPOSTRequestWithServiceIdentifier:servieIdentifier requestParams:params methodName:methodName];
+    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulPOSTRequestWithServiceIdentifier:servieIdentifier requestParams:params httpHeaderFields:headerFields methodName:methodName];
     NSNumber *requestId = [self callApiWithRequest:request success:success fail:fail];
     return [requestId integerValue];
 }
-- (NSInteger)callRestfulPUTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail
+- (NSInteger)callRestfulPUTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail
 {
-    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulPUTRequestWithServiceIdentifier:servieIdentifier requestParams:params methodName:methodName];
+    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulPUTRequestWithServiceIdentifier:servieIdentifier requestParams:params httpHeaderFields:headerFields methodName:methodName];
     NSNumber *requestId = [self callApiWithRequest:request success:success fail:fail];
     return [requestId integerValue];
 }
-- (NSInteger)callRestfulDELETEWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName success:(YRDCallback)success fail:(YRDCallback)fail
+- (NSInteger)callRestfulDELETEWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName httpHeaderFields:(NSDictionary *)headerFields success:(YRDCallback)success fail:(YRDCallback)fail
 {
-    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulDELETERequestWithServiceIdentifier:servieIdentifier requestParams:params methodName:methodName];
+    NSURLRequest *request = [[YRDRequestGenerator sharedInstance] generateRestfulDELETERequestWithServiceIdentifier:servieIdentifier requestParams:params httpHeaderFields:headerFields methodName:methodName];
     NSNumber *requestId = [self callApiWithRequest:request success:success fail:fail];
     return [requestId integerValue];
 }
@@ -175,11 +175,11 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
     [downLoadTask resume];
     return  [requestId integerValue];
 }
-- (NSInteger)uploadTaskWithRequest:(NSString *)request parameters:(id)parameters constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block progress:(void (^)(NSProgress *))upProgress success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
+- (NSInteger)uploadTaskWithRequest:(NSString *)request parameters:(id)parameters httpHeaderFields:(NSDictionary *)headerFields constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block progress:(void (^)(NSProgress *))upProgress success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
     NSLog(@"\n==================================\n\nUploadRequest Start: \n\n %@\n\n==================================", request);
     
     __block NSURLSessionDataTask *upLoadTask = nil;
-    upLoadTask = [self POST:request parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    upLoadTask = [self POST:request parameters:parameters httpHeaderFields:(NSDictionary *)headerFields constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         block(formData);
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
@@ -232,6 +232,7 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
  */
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
                     parameters:(id)parameters
+                    httpHeaderFields:(NSDictionary *)headerFields
      constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
                       progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
                        success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
@@ -242,7 +243,8 @@ static NSString * const kYRDApiProxyDispatchItemKeyCallbackFail = @"kYRDApiProxy
     NSMutableURLRequest *request = [self.sessionManager.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:nil] absoluteString] parameters:parameters constructingBodyWithBlock:block error:&serializationError];
     
     //header参数，以后要往headerfields里填写参数才能访问接口
-    NSDictionary *httpHeaderFields = [[YRDRequestGenerator sharedInstance]requestHeaderTokenParams];
+    NSMutableDictionary *httpHeaderFields = [[[YRDRequestGenerator sharedInstance]requestHeaderTokenParams] mutableCopy];
+    [httpHeaderFields addEntriesFromDictionary:headerFields];
     [httpHeaderFields enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [request setValue:obj forHTTPHeaderField:key];
     }];

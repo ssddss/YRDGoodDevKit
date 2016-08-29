@@ -43,6 +43,6 @@
     return YRDAPIManagerRequestTypeRestPost;
 }
 - (BOOL)shouldRefreshLoadingRequest {
-    return NO;
+    return YES;
 }
 @end
