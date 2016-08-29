@@ -21,7 +21,7 @@
 
 #pragma mark - 调试输出
 
-#ifdef DEBUG
+#ifndef RELEASE
 #define NSLog(...) NSLog(__VA_ARGS__)
 #define DebugMethod() NSLog(@"%s", __func__)
 #else
