@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @interface YBGBaseViewController : UIViewController
 
-@property (nonatomic, readonly) NSString *pageId;
+@property (nonatomic, readonly) NSString *pageId;/**< 页面的id*/
 /**
  *  显示本Controller显示位置的加载动画
  */
